@@ -114,7 +114,7 @@
   /* APP CARD */
   .app-card {
     display: grid;
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 64px minmax(0, 1fr);
     gap: 1.25rem;
     padding: 1.75rem 0;
     border-top: 1px solid var(--rule);
@@ -133,11 +133,8 @@
   }
   .app-icon svg { display: block; width: 100%; height: 100%; }
 
-  /* PlaylistGenerator icon */
   .icon-playlist { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
-  /* Folio Home icon */
   .icon-folio { background: linear-gradient(135deg, #534AB7 0%, #7A72D6 100%); }
-  /* Sketchline icon */
   .icon-sketchline { background: linear-gradient(135deg, #f0e6d3 0%, #e8d5b7 100%); }
 
   .app-meta { display: flex; flex-direction: column; justify-content: center; }
@@ -222,7 +219,7 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-brand">AK</a>
+  <a href="/" class="nav-brand">ABR</a>
   <ul class="nav-links">
     <li><a href="#apps">Apps</a></li>
     <li><a href="#beta">Beta</a></li>
@@ -241,17 +238,15 @@
   <section class="section" id="apps">
     <p class="section-label">Apps</p>
 
-    <!-- PlaylistGenerator -->
+    <!-- Track Tailor -->
     <div class="app-card">
       <div class="app-icon icon-playlist">
         <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <rect width="64" height="64" fill="none"/>
-          <!-- Music note bars -->
           <rect x="16" y="28" width="5" height="18" rx="2.5" fill="#5A9EF5" opacity="0.7"/>
           <rect x="24" y="22" width="5" height="24" rx="2.5" fill="#5A9EF5" opacity="0.85"/>
           <rect x="32" y="18" width="5" height="28" rx="2.5" fill="#5A9EF5"/>
           <rect x="40" y="14" width="5" height="32" rx="2.5" fill="#3DDADA"/>
-          <!-- Headphone arc -->
           <path d="M20 30 C20 20 44 20 44 30" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/>
         </svg>
       </div>
@@ -263,27 +258,21 @@
         <p class="app-sub">Dynamic Apple Music playlists</p>
         <p class="app-desc">Define filter rules — artists, genres, keywords, date ranges — and the app maintains your Apple Music playlists automatically.</p>
         <div class="app-links">
-          <!-- TODO: Replace with real App Store link -->
           <a href="https://apps.apple.com/us/app/track-tailor/id6761209212" class="app-link">App Store →</a>
           <a href="apps/playlistgenerator-support.html" class="app-link secondary">Support</a>
-          <!-- TODO: Replace with Notion privacy policy URL -->
           <a href="https://roan-wakeboard-a2c.notion.site/Privacy-Policy-PlaylistGenerator-339cd39150648061a833c8c356f5cf76" class="app-link secondary">Privacy Policy</a>
           <a href="legal/playlistgenerator-terms.html" class="app-link secondary">Terms of Use</a>
-          <!-- TODO: Replace with Notion copyright URL -->
           <a href="https://roan-wakeboard-a2c.notion.site/Copyright-PlaylistGenerator-339cd391506480d4becec984bd52482c" class="app-link secondary">Copyright</a>
         </div>
       </div>
     </div>
 
     <!-- Folio Home -->
-    <a href="apps/foliohome.html" class="app-card">
+    <div class="app-card">
       <div class="app-icon icon-folio">
         <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <!-- House roof -->
           <polyline points="12,32 32,14 52,32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- House body -->
           <rect x="18" y="31" width="28" height="22" rx="2" fill="rgba(255,255,255,0.92)"/>
-          <!-- Bar chart inside house -->
           <rect x="22" y="44" width="4" height="6" rx="1" fill="#9B6FE8"/>
           <rect x="28" y="40" width="4" height="10" rx="1" fill="#7A72D6"/>
           <rect x="34" y="37" width="4" height="13" rx="1" fill="#534AB7"/>
@@ -298,20 +287,18 @@
         <p class="app-sub">Household budget & finance</p>
         <p class="app-desc">Track income, recurring expenses, and savings across a multi-member household. Gross-to-net salary calculator with bundled tax data for DE, AT, CH, and more.</p>
         <div class="app-links">
-          <span class="app-link secondary">Privacy Policy</span>
+          <a href="legal/foliohome-privacy.html" class="app-link secondary">Privacy Policy</a>
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- Sketchline -->
-    <a href="apps/sketchline.html" class="app-card">
+    <div class="app-card">
       <div class="app-icon icon-sketchline">
         <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <!-- Pencil -->
           <rect x="28" y="10" width="10" height="36" rx="2" transform="rotate(15 33 28)" fill="#8B6914" opacity="0.9"/>
           <polygon points="30,44 36,44 33,52" transform="rotate(15 33 28)" fill="#534AB7" opacity="0.8"/>
           <rect x="28" y="10" width="10" height="5" rx="2" transform="rotate(15 33 28)" fill="#ccc"/>
-          <!-- Sketch strokes -->
           <path d="M14 50 C18 44 22 48 26 44" stroke="#534AB7" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
           <path d="M16 55 C22 51 26 54 30 50" stroke="#0F6E56" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
         </svg>
@@ -328,7 +315,7 @@
           <a href="legal/sketchline-privacy.html" class="app-link secondary">Privacy Policy</a>
         </div>
       </div>
-    </a>
+    </div>
 
   </section>
 
@@ -357,7 +344,6 @@
   <ul class="footer-links">
     <li><a href="mailto:gourd_pulp.9b@icloud.com">Email</a></li>
     <li><a href="https://github.com/ems2810">GitHub</a></li>
-    <li><a href="https://ems2810.github.io">Imprint</a></li>
   </ul>
 </footer>
 
