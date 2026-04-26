@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta — Folio Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .beta-hero {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .beta-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, #534AB7 0%, #7A72D6 100%);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .feature-item {
+    padding: 1rem;
+    background: rgba(83,74,183,0.05);
+    border: 1px solid rgba(83,74,183,0.15);
+    border-radius: 10px;
+  }
+  .feature-item .f-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.35rem;
+  }
+  .feature-item p {
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+  .tf-box {
+    background: rgba(83,74,183,0.05);
+    border: 1px solid rgba(83,74,183,0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2.5rem 0;
+  }
+  .tf-box h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    margin-top: 0;
+  }
+  .tf-box p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .tf-button {
+    display: inline-block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: white;
+    background: var(--purple);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .tf-button:hover { opacity: 0.85; }
+  .tf-note {
+    font-size: 0.8125rem;
+    color: var(--ink-faint);
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">AK</a>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+
+  <div class="beta-hero">
+    <div class="beta-icon">
+      <svg width="32" height="32" viewBox="0 0 64 64">
+        <polyline points="12,32 32,14 52,32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="18" y="31" width="28" height="22" rx="2" fill="rgba(255,255,255,0.92)"/>
+        <rect x="22" y="44" width="4" height="6" rx="1" fill="#9B6FE8"/>
+        <rect x="28" y="40" width="4" height="10" rx="1" fill="#7A72D6"/>
+        <rect x="34" y="37" width="4" height="13" rx="1" fill="#534AB7"/>
+        <rect x="40" y="33" width="4" height="17" rx="1" fill="#1DA882"/>
+      </svg>
+    </div>
+    <div>
+      <p class="page-eyebrow" style="margin-bottom:0.25rem;">Folio Home</p>
+      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Beta Testing</h1>
+    </div>
+  </div>
+
+  <p style="font-size:1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+    Folio Home is a household budget and finance app for iPhone and iPad, currently in active development. The beta runs on iOS 26 and is distributed via TestFlight.
+  </p>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <p class="f-label">Dashboard</p>
+      <p>Income, expenses, weekly budget and budget progress at a glance</p>
+    </div>
+    <div class="feature-item">
+      <p class="f-label">Recurring entries</p>
+      <p>Fixed costs and savings with flexible intervals and monthly overrides</p>
+    </div>
+    <div class="feature-item">
+      <p class="f-label">Salary calculator</p>
+      <p>Gross-to-net calculator with bundled tax data for DE, AT, CH, NL, FR, GB, US</p>
+    </div>
+    <div class="feature-item">
+      <p class="f-label">Multi-member</p>
+      <p>Track budgets and transactions across a whole household</p>
+    </div>
+    <div class="feature-item">
+      <p class="f-label">Annual planner</p>
+      <p>Year-at-a-glance view with balance forecasts per month</p>
+    </div>
+    <div class="feature-item">
+      <p class="f-label">iCloud sync</p>
+      <p>Private CloudKit sync across all your Apple devices</p>
+    </div>
+  </div>
+
+  <div class="tf-box">
+    <h2>Join via TestFlight</h2>
+    <p>TestFlight is Apple's free beta testing platform. You'll need a free Apple ID and the TestFlight app installed on your iPhone or iPad running iOS 26.</p>
+    <a href="https://testflight.apple.com/join/WyqxGCUU" class="tf-button">Open in TestFlight →</a>
+    <p class="tf-note">The beta may contain bugs. Please use the in-app feedback button or email to report issues.</p>
+  </div>
+
+  <h2>What to test</h2>
+  <p>In the current beta, focus on:</p>
+  <ul>
+    <li>Adding recurring expenses and checking month rollover</li>
+    <li>The salary calculator with your country's tax settings</li>
+    <li>Creating transactions and viewing the dashboard</li>
+    <li>iCloud sync across multiple devices if you have them</li>
+  </ul>
+
+  <h2>Feedback</h2>
+  <p>Use the TestFlight feedback button, or email <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>. Please include the iOS version and a description of what you expected vs. what happened.</p>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>iPhone or iPad running iOS / iPadOS 26 or later</li>
+    <li>TestFlight app installed</li>
+    <li>Apple ID</li>
+  </ul>
+</main>
+
+<footer>
+  <span class="footer-name">Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/foliohome-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/foliohome-terms.html">Terms of Use</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+</body>
+</html>

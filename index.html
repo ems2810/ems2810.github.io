@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achim Braml — iOS Apps</title>
+<meta name="description" content="Independent iOS developer. Building thoughtful apps for iPhone and iPad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a1a;
+    --ink-muted: #5a5a5a;
+    --ink-faint: #9a9a9a;
+    --paper: #f7f4ef;
+    --paper-warm: #ede9e1;
+    --rule: rgba(0,0,0,0.1);
+    --purple: #534AB7;
+    --purple-light: #7A72D6;
+    --green: #0F6E56;
+    --green-light: #1DA882;
+    --accent: #534AB7;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+    background: rgba(247,244,239,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    padding: 6rem 2rem 5rem;
+    max-width: 680px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--purple-light);
+  }
+  .hero p {
+    font-size: 1.0625rem;
+    color: var(--ink-muted);
+    max-width: 520px;
+    line-height: 1.75;
+  }
+
+  /* APPS SECTION */
+  .section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2.5rem;
+  }
+
+  /* APP CARD */
+  .app-card {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 1.25rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .app-card:hover { opacity: 0.75; }
+  .app-card:first-of-type { border-top: none; }
+
+  .app-icon {
+    width: 64px; height: 64px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .app-icon svg { display: block; width: 100%; height: 100%; }
+
+  /* PlaylistGenerator icon */
+  .icon-playlist { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+  /* Folio Home icon */
+  .icon-folio { background: linear-gradient(135deg, #534AB7 0%, #7A72D6 100%); }
+  /* Sketchline icon */
+  .icon-sketchline { background: linear-gradient(135deg, #f0e6d3 0%, #e8d5b7 100%); }
+
+  .app-meta { display: flex; flex-direction: column; justify-content: center; }
+  .app-name-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem; }
+  .app-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .badge {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .badge-live { background: rgba(15,110,86,0.1); color: #0F6E56; }
+  .badge-beta { background: rgba(83,74,183,0.1); color: #534AB7; }
+  .badge-dev { background: rgba(90,90,90,0.1); color: var(--ink-muted); }
+
+  .app-sub {
+    font-size: 0.875rem;
+    color: var(--ink-faint);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  .app-desc {
+    font-size: 0.9375rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  .app-links { display: flex; gap: 1rem; margin-top: 0.9rem; flex-wrap: wrap; }
+  .app-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--purple);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(83,74,183,0.25);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .app-link:hover { border-color: var(--purple); }
+  .app-link.secondary { color: var(--ink-muted); border-color: var(--rule); }
+  .app-link.secondary:hover { color: var(--ink); border-color: var(--ink-muted); }
+
+  /* FOOTER */
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.9375rem;
+    color: var(--ink-faint);
+  }
+  .footer-links { display: flex; gap: 1.25rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.8125rem;
+    color: var(--ink-faint);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--ink-muted); }
+
+  @media (max-width: 540px) {
+    nav { padding: 0 1rem; }
+    .hero, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding-top: 3.5rem; }
+    .nav-links { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">AK</a>
+  <ul class="nav-links">
+    <li><a href="#apps">Apps</a></li>
+    <li><a href="#beta">Beta</a></li>
+    <li><a href="mailto:gourd_pulp.9b@icloud.com">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Independent iOS Developer</p>
+    <h1>Apps built with<br><em>care and purpose</em></h1>
+    <p>I build small, focused iOS apps that solve real problems — for household finances, music, and creative work.</p>
+  </section>
+
+  <section class="section" id="apps">
+    <p class="section-label">Apps</p>
+
+    <!-- PlaylistGenerator -->
+    <div class="app-card">
+      <div class="app-icon icon-playlist">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" fill="none"/>
+          <!-- Music note bars -->
+          <rect x="16" y="28" width="5" height="18" rx="2.5" fill="#5A9EF5" opacity="0.7"/>
+          <rect x="24" y="22" width="5" height="24" rx="2.5" fill="#5A9EF5" opacity="0.85"/>
+          <rect x="32" y="18" width="5" height="28" rx="2.5" fill="#5A9EF5"/>
+          <rect x="40" y="14" width="5" height="32" rx="2.5" fill="#3DDADA"/>
+          <!-- Headphone arc -->
+          <path d="M20 30 C20 20 44 20 44 30" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="app-meta">
+        <div class="app-name-row">
+          <span class="app-name">Track Tailor</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <p class="app-sub">Dynamic Apple Music playlists</p>
+        <p class="app-desc">Define filter rules — artists, genres, keywords, date ranges — and the app maintains your Apple Music playlists automatically.</p>
+        <div class="app-links">
+          <!-- TODO: Replace with real App Store link -->
+          <a href="https://apps.apple.com/us/app/track-tailor/id6761209212" class="app-link">App Store →</a>
+          <a href="apps/playlistgenerator-support.html" class="app-link secondary">Support</a>
+          <!-- TODO: Replace with Notion privacy policy URL -->
+          <a href="https://roan-wakeboard-a2c.notion.site/Privacy-Policy-PlaylistGenerator-339cd39150648061a833c8c356f5cf76" class="app-link secondary">Privacy Policy</a>
+          <a href="legal/playlistgenerator-terms.html" class="app-link secondary">Terms of Use</a>
+          <!-- TODO: Replace with Notion copyright URL -->
+          <a href="https://roan-wakeboard-a2c.notion.site/Copyright-PlaylistGenerator-339cd391506480d4becec984bd52482c" class="app-link secondary">Copyright</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Folio Home -->
+    <a href="apps/foliohome.html" class="app-card">
+      <div class="app-icon icon-folio">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <!-- House roof -->
+          <polyline points="12,32 32,14 52,32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- House body -->
+          <rect x="18" y="31" width="28" height="22" rx="2" fill="rgba(255,255,255,0.92)"/>
+          <!-- Bar chart inside house -->
+          <rect x="22" y="44" width="4" height="6" rx="1" fill="#9B6FE8"/>
+          <rect x="28" y="40" width="4" height="10" rx="1" fill="#7A72D6"/>
+          <rect x="34" y="37" width="4" height="13" rx="1" fill="#534AB7"/>
+          <rect x="40" y="33" width="4" height="17" rx="1" fill="#1DA882"/>
+        </svg>
+      </div>
+      <div class="app-meta">
+        <div class="app-name-row">
+          <span class="app-name">Folio Home</span>
+          <span class="badge badge-dev">In Development</span>
+        </div>
+        <p class="app-sub">Household budget & finance</p>
+        <p class="app-desc">Track income, recurring expenses, and savings across a multi-member household. Gross-to-net salary calculator with bundled tax data for DE, AT, CH, and more.</p>
+        <div class="app-links">
+          <span class="app-link secondary">Privacy Policy</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sketchline -->
+    <a href="apps/sketchline.html" class="app-card">
+      <div class="app-icon icon-sketchline">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pencil -->
+          <rect x="28" y="10" width="10" height="36" rx="2" transform="rotate(15 33 28)" fill="#8B6914" opacity="0.9"/>
+          <polygon points="30,44 36,44 33,52" transform="rotate(15 33 28)" fill="#534AB7" opacity="0.8"/>
+          <rect x="28" y="10" width="10" height="5" rx="2" transform="rotate(15 33 28)" fill="#ccc"/>
+          <!-- Sketch strokes -->
+          <path d="M14 50 C18 44 22 48 26 44" stroke="#534AB7" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <path d="M16 55 C22 51 26 54 30 50" stroke="#0F6E56" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="app-meta">
+        <div class="app-name-row">
+          <span class="app-name">Sketchline</span>
+          <span class="badge badge-beta">Beta</span>
+        </div>
+        <p class="app-sub">Natural drawing for iPad</p>
+        <p class="app-desc">A focused drawing app built for Apple Pencil. Natural brush engine, hover previews, and a minimal interface that stays out of the way.</p>
+        <div class="app-links">
+          <a href="https://testflight.apple.com/join/WyqxGCUU" class="app-link">TestFlight Beta →</a>
+          <a href="legal/sketchline-privacy.html" class="app-link secondary">Privacy Policy</a>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- EARLY ACCESS -->
+  <section class="section" id="beta">
+    <p class="section-label">Early Access</p>
+    <p style="font-size:1rem; color: var(--ink-muted); margin-bottom: 1.75rem; max-width: 520px; line-height: 1.75;">
+      Sketchline is in public beta on TestFlight, open to the first 100 testers.
+    </p>
+
+    <div style="background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 12px; padding: 1.5rem; max-width: 480px;">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+        <div class="app-icon icon-sketchline" style="width:32px;height:32px;border-radius:8px;"></div>
+        <span style="font-family: 'DM Serif Display', serif; font-size: 1rem;">Sketchline</span>
+        <span class="badge badge-beta">Beta</span>
+      </div>
+      <p style="font-size: 0.875rem; color: var(--ink-muted); margin-bottom: 1.1rem; line-height:1.6;">iPadOS 17 · Apple Pencil · Natural brushes · PencilKit-based · 100 Tester-Slots</p>
+      <a href="https://testflight.apple.com/join/WyqxGCUU" style="display:inline-block; font-size:0.875rem; font-weight:500; color:white; background:var(--purple); padding: 0.5rem 1.1rem; border-radius: 6px; text-decoration:none; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">Join beta on TestFlight &#x2192;</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-name">Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="mailto:gourd_pulp.9b@icloud.com">Email</a></li>
+    <li><a href="https://github.com/ems2810">GitHub</a></li>
+    <li><a href="https://ems2810.github.io">Imprint</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

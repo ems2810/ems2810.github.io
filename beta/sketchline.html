@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta Waitlist — Sketchline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .beta-hero {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .beta-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, #f0e6d3 0%, #e8d5b7 100%);
+    flex-shrink: 0;
+  }
+  .waitlist-form {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .waitlist-form h2 { margin-top: 0; margin-bottom: 0.6rem; }
+  .waitlist-form p { margin-bottom: 1.5rem; }
+  .form-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .form-input {
+    flex: 1;
+    min-width: 200px;
+    height: 42px;
+    padding: 0 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    color: var(--ink);
+    outline: none;
+  }
+  .form-input:focus { border-color: rgba(83,74,183,0.4); box-shadow: 0 0 0 3px rgba(83,74,183,0.1); }
+  .form-input::placeholder { color: var(--ink-faint); }
+  .form-btn {
+    height: 42px;
+    padding: 0 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: white;
+    background: var(--ink);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .form-btn:hover { opacity: 0.85; }
+  .form-note {
+    font-size: 0.8125rem;
+    color: var(--ink-faint);
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+  }
+  .success-msg {
+    display: none;
+    color: var(--green);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  .feature-list { list-style: none; margin-left: 0; }
+  .feature-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feat-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--purple);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">AK</a>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+
+  <div class="beta-hero">
+    <div class="beta-icon"></div>
+    <div>
+      <p class="page-eyebrow" style="margin-bottom:0.25rem;">Sketchline</p>
+      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Beta Waitlist</h1>
+    </div>
+  </div>
+
+  <p style="font-size:1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.5rem;">
+    Sketchline is a natural drawing app for iPad with full Apple Pencil support. The beta is live on TestFlight with 100 available slots.
+  </p>
+
+  <div class="waitlist-form">
+    <h2>Join the beta on TestFlight</h2>
+    <p>The beta is open to the first 100 testers. Tap the button below to join via TestFlight — you'll need the free TestFlight app installed on your iPad.</p>
+    <a href="https://testflight.apple.com/join/WyqxGCUU" class="tf-button">Open in TestFlight →</a>
+    <p class="tf-note">TestFlight is Apple's free beta testing platform. The beta may contain bugs — please report them via the TestFlight feedback button or by email.</p>
+  </div>
+
+  <h2>What's in Sketchline</h2>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span>9 natural brush types: pencil, fountain pen, watercolor, crayon, marker, monoline, and more</span></li>
+    <li><span class="feat-dot"></span><span>Full Apple Pencil support including hover preview, barrel roll, double-tap tool switching, and Squeeze (Apple Pencil Pro)</span></li>
+    <li><span class="feat-dot"></span><span>Import photos as reference layers with background removal via Vision</span></li>
+    <li><span class="feat-dot"></span><span>Export as PNG, PDF, or native .sketchline package (can be opened from Files.app)</span></li>
+    <li><span class="feat-dot"></span><span>Minimal, distraction-free UI — the canvas is the interface</span></li>
+    <li><span class="feat-dot"></span><span>Multi-drawing gallery with auto-save and full undo/redo</span></li>
+  </ul>
+
+  <h2>Requirements</h2>
+  <p>Sketchline requires an iPad running iPadOS 17 or later. An Apple Pencil is strongly recommended.</p>
+
+</main>
+
+<footer>
+  <span class="footer-name">Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/sketchline-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/sketchline-terms.html">Terms of Use</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+
+
+</body>
+</html>
