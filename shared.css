@@ -3,11 +3,12 @@
 :root {
   --ink: #1a1a1a;
   --ink-muted: #5a5a5a;
-  --ink-faint: #9a9a9a;
+  --ink-faint: #6c6c6c;
   --paper: #f7f4ef;
   --paper-warm: #ede9e1;
   --rule: rgba(0,0,0,0.1);
   --purple: #534AB7;
+  --purple-dark: #443BA8;
   --purple-light: #7A72D6;
   --green: #0F6E56;
   --green-light: #1DA882;
@@ -21,6 +22,20 @@ body {
   color: var(--ink);
   min-height: 100vh;
   line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 nav {
@@ -37,6 +52,7 @@ nav {
   font-size: 1.1rem;
   color: var(--ink);
   text-decoration: none;
+  letter-spacing: -0.02em;
 }
 .nav-back {
   font-size: 0.875rem;
@@ -78,14 +94,14 @@ nav {
 
 .page h2 {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   letter-spacing: -0.02em;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
 .page p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--ink-muted);
   margin-bottom: 1rem;
   line-height: 1.75;
@@ -97,7 +113,7 @@ nav {
 }
 
 .page li {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--ink-muted);
   margin-bottom: 0.4rem;
   line-height: 1.7;
@@ -108,7 +124,7 @@ nav {
 footer {
   max-width: 640px;
   margin: 0 auto;
-  padding: 2rem 2rem;
+  padding: 2rem;
   border-top: 1px solid var(--rule);
   display: flex;
   align-items: center;
@@ -118,12 +134,12 @@ footer {
 }
 .footer-name {
   font-family: 'DM Serif Display', serif;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: var(--ink-faint);
 }
 .footer-links { display: flex; gap: 1.25rem; list-style: none; }
 .footer-links a {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--ink-faint);
   text-decoration: none;
 }
