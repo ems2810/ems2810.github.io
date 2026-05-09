@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Folio Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .faq-item {
+    border-top: 1px solid var(--rule);
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--rule); }
+  .faq-q {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .contact-box {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .contact-box h2 { margin-top: 0; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">AK</a>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+  <p class="page-eyebrow">Folio Home</p>
+  <h1>Support</h1>
+  <p class="page-meta">Household budget & finance for iOS · In development</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <p class="faq-q">Where is my financial data stored?</p>
+    <p class="faq-a">All data is stored locally on your device using SwiftData. If you enable iCloud sync, your data is synced via Apple's CloudKit private database — only accessible to you. Folio Home does not run its own servers and does not transmit your financial information to Achim Braml.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do recurring expenses work?</p>
+    <p class="faq-a">Define an entry with an interval (weekly, monthly, yearly, or custom) and a start date. Folio Home generates the upcoming occurrences automatically. You can override individual months — for example, if rent changes for one month — without breaking the recurring schedule.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How accurate is the salary calculator?</p>
+    <p class="faq-a">The gross-to-net calculator uses bundled tax tables for DE, AT, CH, NL, FR, GB, US and other countries. Results are estimates for planning purposes only and don't replace official advice from a tax professional. Tax data is updated with app releases.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Can multiple household members share a budget?</p>
+    <p class="faq-a">Yes. Add each member as a profile and assign income, expenses, and shared categories. The dashboard rolls everything up to a household view, and you can drill down per member.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I back up my data?</p>
+    <p class="faq-a">Enable iCloud sync (free) for automatic backup across your Apple devices. Pro users can also configure a WebDAV / NAS endpoint for encrypted external backups, and export everything as CSV or PDF from Settings → Data.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What does Pro include?</p>
+    <p class="faq-a">Pro unlocks the Annual Planner with monthly balance forecasts, advanced CSV/PDF export, multiple salary snapshots, WebDAV sync, advanced analytics, and removes ads. It's available as a monthly or yearly auto-renewable subscription.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I delete all my data?</p>
+    <p class="faq-a">Open Settings → Data → Delete All Data within the app. To also clear iCloud data, go to iOS Settings → [your name] → iCloud → Manage Storage → Folio Home → Delete Data.</p>
+  </div>
+
+  <h2>Known issues</h2>
+  <ul>
+    <li>Tax data updates only ship with new app versions — keep the app up to date for the most current rates.</li>
+    <li>Very large CSV exports (10,000+ rows) may take several seconds to generate.</li>
+    <li>WebDAV connection errors are sometimes reported generically — check server URL and credentials.</li>
+  </ul>
+
+  <div class="contact-box">
+    <h2>Still need help?</h2>
+    <p>Send an email with your iOS version, the app build number (Settings → About), and a description of the issue.</p>
+    <p style="margin-top: 1rem;"><a href="mailto:gourd_pulp.9b@icloud.com" style="font-weight:500; color: var(--purple);">gourd_pulp.9b@icloud.com →</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-name">Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/foliohome-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/foliohome-terms.html">Terms of Use</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+</body>
+</html>

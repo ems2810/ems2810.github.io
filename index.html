@@ -118,11 +118,8 @@
     gap: 1.25rem;
     padding: 1.75rem 0;
     border-top: 1px solid var(--rule);
-    text-decoration: none;
     color: inherit;
-    transition: opacity 0.2s;
   }
-  .app-card:hover { opacity: 0.75; }
   .app-card:first-of-type { border-top: none; }
 
   .app-icon {
@@ -131,14 +128,10 @@
     flex-shrink: 0;
     overflow: hidden;
   }
-  .app-icon svg { display: block; width: 100%; height: 100%; }
+  .app-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-  /* PlaylistGenerator icon */
-  .icon-playlist { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
-  /* Folio Home icon */
-  .icon-folio { background: linear-gradient(135deg, #534AB7 0%, #7A72D6 100%); }
-  /* Sketchline icon */
-  .icon-sketchline { background: linear-gradient(135deg, #f0e6d3 0%, #e8d5b7 100%); }
+  .app-card.coming-soon .app-icon { opacity: 0.55; filter: grayscale(0.4); }
+  .app-card.coming-soon .app-name { color: var(--ink-muted); }
 
   .app-meta { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
   .app-name-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem; }
@@ -241,15 +234,10 @@
   <section class="section" id="apps">
     <p class="section-label">Apps</p>
 
-    <!-- PlaylistGenerator -->
+    <!-- Track Tailor -->
     <div class="app-card">
-      <div style="flex-shrink:0;width:64px;height:64px;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0a0a14 0%,#1a1a2e 100%);">
-        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-          <polygon points="14,18 14,46 32,32" fill="#4BBEF5"/>
-          <rect x="36" y="20" width="18" height="3.5" rx="1.75" fill="#e8e8e8"/>
-          <rect x="36" y="30" width="18" height="3.5" rx="1.75" fill="#e8e8e8"/>
-          <rect x="36" y="40" width="13" height="3.5" rx="1.75" fill="#e8e8e8"/>
-        </svg>
+      <div class="app-icon">
+        <img src="icons/tracktailor.png" alt="Track Tailor app icon" width="64" height="64">
       </div>
       <div class="app-meta">
         <div class="app-name-row">
@@ -259,58 +247,19 @@
         <p class="app-sub">Dynamic Apple Music playlists</p>
         <p class="app-desc">Define filter rules — artists, genres, keywords, date ranges — and the app maintains your Apple Music playlists automatically.</p>
         <div class="app-links">
-          <!-- TODO: Replace with real App Store link -->
           <a href="https://apps.apple.com/us/app/track-tailor/id6761209212" class="app-link">App Store →</a>
           <a href="apps/playlistgenerator-support.html" class="app-link secondary">Support</a>
-          <!-- TODO: Replace with Notion privacy policy URL -->
-          <a href="https://roan-wakeboard-a2c.notion.site/Privacy-Policy-PlaylistGenerator-339cd39150648061a833c8c356f5cf76" class="app-link secondary">Privacy Policy</a>
+          <a href="legal/playlistgenerator-privacy.html" class="app-link secondary">Privacy Policy</a>
           <a href="legal/playlistgenerator-terms.html" class="app-link secondary">Terms of Use</a>
-          <!-- TODO: Replace with Notion copyright URL -->
-          <a href="https://roan-wakeboard-a2c.notion.site/Copyright-PlaylistGenerator-339cd391506480d4becec984bd52482c" class="app-link secondary">Copyright</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Folio Home -->
-    <div class="app-card">
-      <div class="app-icon icon-folio">
-        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <!-- House roof -->
-          <polyline points="12,32 32,14 52,32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- House body -->
-          <rect x="18" y="31" width="28" height="22" rx="2" fill="rgba(255,255,255,0.92)"/>
-          <!-- Bar chart inside house -->
-          <rect x="22" y="44" width="4" height="6" rx="1" fill="#9B6FE8"/>
-          <rect x="28" y="40" width="4" height="10" rx="1" fill="#7A72D6"/>
-          <rect x="34" y="37" width="4" height="13" rx="1" fill="#534AB7"/>
-          <rect x="40" y="33" width="4" height="17" rx="1" fill="#1DA882"/>
-        </svg>
-      </div>
-      <div class="app-meta">
-        <div class="app-name-row">
-          <span class="app-name">Folio Home</span>
-          <span class="badge badge-dev">In Development</span>
-        </div>
-        <p class="app-sub">Household budget & finance</p>
-        <p class="app-desc">Track income, recurring expenses, and savings across a multi-member household. Gross-to-net salary calculator with bundled tax data for DE, AT, CH, and more.</p>
-        <div class="app-links">
-          <a href="legal/foliohome-privacy.html" class="app-link secondary">Privacy Policy</a>
+          <a href="legal/playlistgenerator-copyright.html" class="app-link secondary">Copyright</a>
         </div>
       </div>
     </div>
 
     <!-- Sketchline -->
     <div class="app-card">
-      <div style="flex-shrink:0;width:64px;height:64px;border-radius:14px;overflow:hidden;background:#151C33;">
-        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-          <path d="M12 38 C20 28 28 34 36 26 C42 20 48 24 52 20" stroke="#4BBEF5" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <g transform="translate(36, 10) rotate(15)">
-            <rect x="0" y="0" width="9" height="3" rx="1.5" fill="#ccc"/>
-            <rect x="0" y="3" width="9" height="22" rx="1" fill="#E8A020"/>
-            <rect x="1" y="3" width="3" height="22" rx="0" fill="#F5B830" opacity="0.5"/>
-            <polygon points="0,25 9,25 4.5,32" fill="#534AB7"/>
-          </g>
-        </svg>
+      <div class="app-icon">
+        <img src="icons/sketchline.png" alt="Sketchline app icon" width="64" height="64">
       </div>
       <div class="app-meta">
         <div class="app-name-row">
@@ -320,9 +269,28 @@
         <p class="app-sub">Natural drawing for iPad</p>
         <p class="app-desc">A focused drawing app built for Apple Pencil. Natural brush engine, hover previews, and a minimal interface that stays out of the way.</p>
         <div class="app-links">
-          <a href="https://testflight.apple.com/join/WyqxGCUU" class="app-link">TestFlight Beta →</a>
+          <a href="https://testflight.apple.com/join/WyqxGCUU" class="app-link">Join Beta →</a>
+          <a href="beta/sketchline.html" class="app-link secondary">About the Beta</a>
+          <a href="apps/sketchline-support.html" class="app-link secondary">Support</a>
           <a href="legal/sketchline-privacy.html" class="app-link secondary">Privacy Policy</a>
+          <a href="legal/sketchline-terms.html" class="app-link secondary">Terms of Use</a>
+          <a href="legal/sketchline-copyright.html" class="app-link secondary">Copyright</a>
         </div>
+      </div>
+    </div>
+
+    <!-- Folio Home -->
+    <div class="app-card coming-soon">
+      <div class="app-icon">
+        <img src="icons/foliohome.png" alt="Folio Home app icon" width="64" height="64">
+      </div>
+      <div class="app-meta">
+        <div class="app-name-row">
+          <span class="app-name">Folio Home</span>
+          <span class="badge badge-dev">Coming Soon</span>
+        </div>
+        <p class="app-sub">Household budget & finance</p>
+        <p class="app-desc">Track income, recurring expenses, and savings across a multi-member household. Gross-to-net salary calculator with bundled tax data for DE, AT, CH, and more.</p>
       </div>
     </div>
 
@@ -337,15 +305,7 @@
 
     <div style="background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 12px; padding: 1.5rem; max-width: 480px;">
       <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
-        <svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="border-radius:8px;flex-shrink:0;">
-          <rect width="64" height="64" rx="14" fill="#151C33"/>
-          <path d="M12 38 C20 28 28 34 36 26 C42 20 48 24 52 20" stroke="#4BBEF5" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <g transform="translate(36, 10) rotate(15)">
-            <rect x="0" y="0" width="9" height="3" rx="1.5" fill="#ccc"/>
-            <rect x="0" y="3" width="9" height="22" rx="1" fill="#E8A020"/>
-            <polygon points="0,25 9,25 4.5,32" fill="#534AB7"/>
-          </g>
-        </svg>
+        <img src="icons/sketchline.png" alt="Sketchline app icon" width="32" height="32" style="border-radius:8px; flex-shrink:0; display:block;">
         <span style="font-family: 'DM Serif Display', serif; font-size: 1rem;">Sketchline</span>
         <span class="badge badge-beta">Beta</span>
       </div>

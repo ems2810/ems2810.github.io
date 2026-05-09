@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Sketchline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .faq-item {
+    border-top: 1px solid var(--rule);
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--rule); }
+  .faq-q {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .contact-box {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .contact-box h2 { margin-top: 0; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">AK</a>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+  <p class="page-eyebrow">Sketchline</p>
+  <h1>Support</h1>
+  <p class="page-meta">Natural drawing app for iPad · TestFlight beta</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <p class="faq-q">Which devices are supported?</p>
+    <p class="faq-a">Sketchline runs on iPad with iPadOS 17 or later. An Apple Pencil is strongly recommended — first or second generation, and Apple Pencil Pro are all supported. The app is iPad-only and is not available on iPhone or Mac.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">My Apple Pencil isn't drawing. What should I check?</p>
+    <p class="faq-a">Make sure the Pencil is paired and charged (Settings → Apple Pencil). If pressure or tilt aren't responding, check that "Allow drawing while writing" hasn't disabled finger input where you expected it. Restart the app if hover preview stops updating.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I export a drawing?</p>
+    <p class="faq-a">Tap the share button in the toolbar. You can export as PNG (rasterized image), PDF (vector when possible), or as a native .sketchline package that preserves layers and brush strokes. The .sketchline format can be reopened in the app or shared with other Sketchline users.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Can I import a photo as a reference?</p>
+    <p class="faq-a">Yes. Tap the import icon and choose a photo from your library. The image is added as a reference layer that you can resize, lock, or remove. Optional background removal is available via Vision.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Where are my drawings stored?</p>
+    <p class="faq-a">Drawings are stored locally on your iPad using SwiftData. Nothing is uploaded to a server. Use the export feature to save copies elsewhere. iCloud sync is planned for a future release.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I report a bug in the beta?</p>
+    <p class="faq-a">Use the TestFlight feedback button (long-press the app icon, or via the TestFlight app), or email the address below. Please include your iPadOS version, the app build number, and steps to reproduce.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I leave the beta?</p>
+    <p class="faq-a">Open TestFlight, tap Sketchline, and choose "Stop Testing." You can rejoin later as long as slots are available.</p>
+  </div>
+
+  <h2>Known issues</h2>
+  <ul>
+    <li>Hover preview may briefly disappear when switching brushes rapidly.</li>
+    <li>PDF export rasterizes very large canvases above approximately 4096×4096 pixels.</li>
+    <li>Background removal accuracy depends on the source photo and works best with clear subjects.</li>
+  </ul>
+
+  <div class="contact-box">
+    <h2>Still need help?</h2>
+    <p>Send an email with your iPadOS version, the app build number (Settings → About), and a description of the issue.</p>
+    <p style="margin-top: 1rem;"><a href="mailto:gourd_pulp.9b@icloud.com" style="font-weight:500; color: var(--purple);">gourd_pulp.9b@icloud.com →</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-name">Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/sketchline-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/sketchline-terms.html">Terms of Use</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+</body>
+</html>
