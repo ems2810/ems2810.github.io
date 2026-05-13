@@ -4,40 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Use — Sketchline</title>
-<meta http-equiv="refresh" content="3; url=https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta http-equiv="refresh" content="5; url=https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">
 <link rel="stylesheet" href="../shared.css">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('lang'); } catch (e) {}
+    var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    var supported = ['en', 'de', 'es', 'fr'];
+    var lang = supported.indexOf(stored) >= 0 ? stored
+             : (supported.indexOf(browser) >= 0 ? browser : 'en');
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.initialLang = lang;
+  })();
+</script>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-brand">Achim Braml</a>
   <a href="../index.html" class="nav-back">← Back</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="de">DE</button>
+    <button type="button" data-lang="es">ES</button>
+    <button type="button" data-lang="fr">FR</button>
+  </div>
 </nav>
 
 <main class="page">
   <p class="page-eyebrow">Sketchline</p>
-  <h1>Terms of Use</h1>
-  <p class="page-meta">Apple Standard EULA · Applies to Sketchline for iPadOS</p>
+  <h1 data-i18n="title">Terms of Use</h1>
+  <p class="page-meta" data-i18n="meta">Apple Standard EULA · Applies to Sketchline for iPadOS</p>
+  <p class="lang-notice" data-i18n="disclaimer" hidden></p>
 
-  <p>Use of Sketchline is governed by Apple's Standard End User License Agreement (EULA), the standard licensed application terms used for apps distributed via the App Store and TestFlight.</p>
+  <p data-i18n="p_intro">Use of Sketchline is governed by Apple's Standard End User License Agreement (EULA), the standard licensed application terms used for apps distributed via the App Store and TestFlight.</p>
 
   <p style="margin: 2rem 0;">
-    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="display:inline-block; font-size:0.9375rem; font-weight:500; color:white; background:var(--purple); padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration:none;">Read the Apple Standard EULA →</a>
+    <a class="btn-eula" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i18n="btn">Read the Apple Standard EULA →</a>
   </p>
 
-  <p style="font-size: 0.8125rem; color: var(--ink-faint);">You'll be redirected automatically in a few seconds. If the redirect doesn't work, follow the link above.</p>
+  <p class="redirect-note" data-i18n="redirect">You'll be redirected automatically in a few seconds. If the redirect doesn't work, follow the link above.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about these terms: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
+  <h2 data-i18n="h_contact">Contact</h2>
+  <p data-i18n="p_contact">Questions about these terms: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
 </main>
 
 <footer>
-  <span class="footer-name">Achim Braml</span>
+  <span class="footer-name">© Achim Braml</span>
   <ul class="footer-links">
-    <li><a href="sketchline-privacy.html">Privacy Policy</a></li>
-    <li><a href="../index.html">Home</a></li>
+    <li><a href="sketchline-privacy.html" data-i18n="link_privacy">Privacy Policy</a></li>
+    <li><a href="../index.html" data-i18n="link_home">Home</a></li>
   </ul>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      pageTitle: "Terms of Use — Sketchline",
+      title: "Terms of Use",
+      meta: "Apple Standard EULA · Applies to Sketchline for iPadOS",
+      p_intro: "Use of Sketchline is governed by Apple’s Standard End User License Agreement (EULA), the standard licensed application terms used for apps distributed via the App Store and TestFlight.",
+      btn: "Read the Apple Standard EULA →",
+      redirect: "You’ll be redirected automatically in a few seconds. If the redirect doesn’t work, follow the link above.",
+      h_contact: "Contact",
+      p_contact: 'Questions about these terms: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Privacy Policy",
+      link_home: "Home"
+    },
+    de: {
+      pageTitle: "Nutzungsbedingungen — Sketchline",
+      title: "Nutzungsbedingungen",
+      meta: "Apple Standard-EULA · Gilt für Sketchline für iPadOS",
+      disclaimer: "Diese Übersetzung dient nur der Bequemlichkeit — maßgeblich ist die englische Fassung.",
+      p_intro: "Die Nutzung von Sketchline unterliegt Apples Standard-Endbenutzer-Lizenzvertrag (EULA), den üblichen Lizenzbedingungen für Apps, die über den App Store und TestFlight verteilt werden.",
+      btn: "Apple Standard-EULA lesen →",
+      redirect: "Du wirst in wenigen Sekunden automatisch weitergeleitet. Falls die Weiterleitung nicht funktioniert, folge dem Link oben.",
+      h_contact: "Kontakt",
+      p_contact: 'Fragen zu diesen Bedingungen: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Datenschutzerklärung",
+      link_home: "Startseite"
+    },
+    es: {
+      pageTitle: "Condiciones de uso — Sketchline",
+      title: "Condiciones de uso",
+      meta: "EULA estándar de Apple · Aplica a Sketchline para iPadOS",
+      disclaimer: "Traducción ofrecida por comodidad — la versión en inglés es la vinculante.",
+      p_intro: "El uso de Sketchline se rige por el Contrato de Licencia de Usuario Final (EULA) estándar de Apple, las condiciones de licencia habituales para aplicaciones distribuidas a través del App Store y TestFlight.",
+      btn: "Leer la EULA estándar de Apple →",
+      redirect: "Se te redirigirá automáticamente en unos segundos. Si la redirección no funciona, sigue el enlace de arriba.",
+      h_contact: "Contacto",
+      p_contact: 'Preguntas sobre estas condiciones: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Política de privacidad",
+      link_home: "Inicio"
+    },
+    fr: {
+      pageTitle: "Conditions d’utilisation — Sketchline",
+      title: "Conditions d’utilisation",
+      meta: "CLUF standard d’Apple · S’applique à Sketchline pour iPadOS",
+      disclaimer: "Traduction fournie à titre indicatif — la version anglaise fait foi.",
+      p_intro: "L’utilisation de Sketchline est régie par le Contrat de licence d’utilisateur final (CLUF) standard d’Apple, les conditions de licence habituelles pour les applications distribuées via l’App Store et TestFlight.",
+      btn: "Lire le CLUF standard d’Apple →",
+      redirect: "Vous serez redirigé automatiquement dans quelques secondes. Si la redirection ne fonctionne pas, suivez le lien ci-dessus.",
+      h_contact: "Contact",
+      p_contact: 'Questions sur ces conditions : <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Politique de confidentialité",
+      link_home: "Accueil"
+    }
+  };
+
+  function applyLang(lang) {
+    if (!translations[lang]) lang = 'en';
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+    if (t.pageTitle) document.title = t.pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] != null) el.innerHTML = t[key];
+    });
+    const notice = document.querySelector('.lang-notice');
+    if (notice) {
+      if (lang === 'en' || !t.disclaimer) {
+        notice.hidden = true;
+      } else {
+        notice.hidden = false;
+        notice.textContent = t.disclaimer;
+      }
+    }
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang(document.documentElement.dataset.initialLang || 'en');
+</script>
 </body>
 </html>
