@@ -4,59 +4,223 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Sketchline</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared.css">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('lang'); } catch (e) {}
+    var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    var supported = ['en', 'de', 'es', 'fr'];
+    var lang = supported.indexOf(stored) >= 0 ? stored
+             : (supported.indexOf(browser) >= 0 ? browser : 'en');
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.initialLang = lang;
+  })();
+</script>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-brand">Achim Braml</a>
   <a href="../index.html" class="nav-back">← Back</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="de">DE</button>
+    <button type="button" data-lang="es">ES</button>
+    <button type="button" data-lang="fr">FR</button>
+  </div>
 </nav>
 
 <main class="page">
   <p class="page-eyebrow">Sketchline</p>
-  <h1>Privacy Policy</h1>
-  <p class="page-meta">Last updated: April 2026 · Applies to Sketchline for iPadOS</p>
+  <h1 data-i18n="title">Privacy Policy</h1>
+  <p class="page-meta" data-i18n="meta">Last updated: April 2026 · Applies to Sketchline for iPadOS</p>
+  <p class="lang-notice" data-i18n="disclaimer" hidden></p>
 
-  <h2>Overview</h2>
-  <p>Sketchline is a drawing app. Your drawings stay on your device. The app does not upload your artwork or personal data to any server operated by Achim Braml.</p>
+  <h2 data-i18n="h_overview">Overview</h2>
+  <p data-i18n="p_overview">Sketchline is a drawing app. Your drawings stay on your device. The app does not upload your artwork or personal data to any server operated by Achim Braml.</p>
 
-  <h2>Drawings and artwork</h2>
-  <p>All drawings are stored locally on your device using SwiftData. Artwork is never transmitted to external servers. Exported files (PNG, PDF, .sketchline) go wherever you choose to send them — that is entirely within your control.</p>
+  <h2 data-i18n="h_drawings">Drawings and artwork</h2>
+  <p data-i18n="p_drawings">All drawings are stored locally on your device using SwiftData. Artwork is never transmitted to external servers. Exported files (PNG, PDF, .sketchline) go wherever you choose to send them — that is entirely within your control.</p>
 
-  <h2>Photos library access</h2>
-  <p>Sketchline may request access to your Photos library to import reference images. Photos are copied into the drawing as embedded data and the original is not modified. The app does not upload photos anywhere.</p>
+  <h2 data-i18n="h_photos">Photos library access</h2>
+  <p data-i18n="p_photos">Sketchline may request access to your Photos library to import reference images. Photos are copied into the drawing as embedded data and the original is not modified. The app does not upload photos anywhere.</p>
 
-  <h2>iCloud sync</h2>
-  <p>A future version of Sketchline may offer iCloud sync. This section will be updated when that feature ships.</p>
+  <h2 data-i18n="h_icloud">iCloud sync</h2>
+  <p data-i18n="p_icloud">A future version of Sketchline may offer iCloud sync. This section will be updated when that feature ships.</p>
 
-  <h2>Advertising</h2>
-  <p>The free tier shows ads via Google AdMob. AdMob may collect device identifiers subject to your App Tracking Transparency consent. Denying tracking shows non-personalized ads. Purchasing the Remove Ads subscription removes all advertising.</p>
-  <p>See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for details.</p>
+  <h2 data-i18n="h_ads">Advertising</h2>
+  <p data-i18n="p_ads_1">The free tier shows ads via Google AdMob. AdMob may collect device identifiers subject to your App Tracking Transparency consent. Denying tracking shows non-personalized ads. Purchasing the Remove Ads subscription removes all advertising.</p>
+  <p data-i18n="p_ads_2">See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> for details.</p>
 
-  <h2>Subscriptions</h2>
-  <p>Handled by Apple via StoreKit 2. No payment data is accessible to Achim Braml.</p>
+  <h2 data-i18n="h_subs">Subscriptions</h2>
+  <p data-i18n="p_subs">Handled by Apple via StoreKit 2. No payment data is accessible to Achim Braml.</p>
 
-  <h2>Data deletion</h2>
-  <p>Delete the app to remove all local data. No data is retained externally.</p>
+  <h2 data-i18n="h_delete">Data deletion</h2>
+  <p data-i18n="p_delete">Delete the app to remove all local data. No data is retained externally.</p>
 
-  <h2>Children's privacy</h2>
-  <p>Sketchline is not directed at children under 13.</p>
+  <h2 data-i18n="h_children">Children's privacy</h2>
+  <p data-i18n="p_children">Sketchline is not directed at children under 13.</p>
 
-  <h2>Changes</h2>
-  <p>Policy updates will be published at this URL with a revised date.</p>
+  <h2 data-i18n="h_changes">Changes</h2>
+  <p data-i18n="p_changes">Policy updates will be published at this URL with a revised date.</p>
 
-  <h2>Contact</h2>
+  <h2 data-i18n="h_contact">Contact</h2>
   <p><a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
 </main>
 
 <footer>
-  <span class="footer-name">Achim Braml</span>
+  <span class="footer-name">© Achim Braml</span>
   <ul class="footer-links">
-    <li><a href="sketchline-terms.html">Terms of Use</a></li>
-    <li><a href="../index.html">Home</a></li>
+    <li><a href="sketchline-terms.html" data-i18n="link_terms">Terms of Use</a></li>
+    <li><a href="../index.html" data-i18n="link_home">Home</a></li>
   </ul>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      pageTitle: "Privacy Policy — Sketchline",
+      title: "Privacy Policy",
+      meta: "Last updated: April 2026 · Applies to Sketchline for iPadOS",
+      h_overview: "Overview",
+      p_overview: "Sketchline is a drawing app. Your drawings stay on your device. The app does not upload your artwork or personal data to any server operated by Achim Braml.",
+      h_drawings: "Drawings and artwork",
+      p_drawings: "All drawings are stored locally on your device using SwiftData. Artwork is never transmitted to external servers. Exported files (PNG, PDF, .sketchline) go wherever you choose to send them — that is entirely within your control.",
+      h_photos: "Photos library access",
+      p_photos: "Sketchline may request access to your Photos library to import reference images. Photos are copied into the drawing as embedded data and the original is not modified. The app does not upload photos anywhere.",
+      h_icloud: "iCloud sync",
+      p_icloud: "A future version of Sketchline may offer iCloud sync. This section will be updated when that feature ships.",
+      h_ads: "Advertising",
+      p_ads_1: "The free tier shows ads via Google AdMob. AdMob may collect device identifiers subject to your App Tracking Transparency consent. Denying tracking shows non-personalized ads. Purchasing the Remove Ads subscription removes all advertising.",
+      p_ads_2: 'See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a> for details.',
+      h_subs: "Subscriptions",
+      p_subs: "Handled by Apple via StoreKit 2. No payment data is accessible to Achim Braml.",
+      h_delete: "Data deletion",
+      p_delete: "Delete the app to remove all local data. No data is retained externally.",
+      h_children: "Children’s privacy",
+      p_children: "Sketchline is not directed at children under 13.",
+      h_changes: "Changes",
+      p_changes: "Policy updates will be published at this URL with a revised date.",
+      h_contact: "Contact",
+      link_terms: "Terms of Use",
+      link_home: "Home"
+    },
+    de: {
+      pageTitle: "Datenschutzerklärung — Sketchline",
+      title: "Datenschutzerklärung",
+      meta: "Letzte Aktualisierung: April 2026 · Gilt für Sketchline für iPadOS",
+      disclaimer: "Diese Übersetzung dient nur der Bequemlichkeit — maßgeblich ist die englische Fassung.",
+      h_overview: "Überblick",
+      p_overview: "Sketchline ist eine Zeichen-App. Deine Zeichnungen bleiben auf deinem Gerät. Die App lädt weder Kunstwerke noch persönliche Daten auf Server von Achim Braml hoch.",
+      h_drawings: "Zeichnungen und Kunstwerke",
+      p_drawings: "Alle Zeichnungen werden lokal auf deinem Gerät mit SwiftData gespeichert. Kunstwerke werden niemals an externe Server übertragen. Exportierte Dateien (PNG, PDF, .sketchline) gehen ausschließlich dorthin, wohin du sie sendest — das liegt vollständig in deiner Hand.",
+      h_photos: "Zugriff auf die Fotos-Mediathek",
+      p_photos: "Sketchline kann Zugriff auf deine Fotos-Mediathek anfragen, um Referenzbilder zu importieren. Fotos werden als eingebettete Daten in die Zeichnung kopiert; das Original bleibt unverändert. Die App lädt keine Fotos irgendwohin hoch.",
+      h_icloud: "iCloud-Synchronisierung",
+      p_icloud: "Eine zukünftige Version von Sketchline kann iCloud-Synchronisierung anbieten. Dieser Abschnitt wird aktualisiert, sobald die Funktion verfügbar ist.",
+      h_ads: "Werbung",
+      p_ads_1: "Die kostenlose Version zeigt Werbung über Google AdMob an. AdMob kann Gerätekennungen erheben, sofern du der App-Tracking-Transparenz zustimmst. Lehnst du Tracking ab, werden nicht personalisierte Anzeigen ausgespielt. Mit dem Abo „Werbung entfernen“ wird sämtliche Werbung deaktiviert.",
+      p_ads_2: 'Details findest du in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.',
+      h_subs: "Abonnements",
+      p_subs: "Abonnements werden von Apple über StoreKit 2 abgewickelt. Zahlungsdaten sind für Achim Braml nicht einsehbar.",
+      h_delete: "Daten löschen",
+      p_delete: "Lösche die App, um alle lokalen Daten zu entfernen. Es werden keine Daten extern gespeichert.",
+      h_children: "Datenschutz für Kinder",
+      p_children: "Sketchline richtet sich nicht an Kinder unter 13 Jahren.",
+      h_changes: "Änderungen",
+      p_changes: "Änderungen dieser Datenschutzerklärung werden mit einem aktualisierten Datum unter dieser URL veröffentlicht.",
+      h_contact: "Kontakt",
+      link_terms: "Nutzungsbedingungen",
+      link_home: "Startseite"
+    },
+    es: {
+      pageTitle: "Política de privacidad — Sketchline",
+      title: "Política de privacidad",
+      meta: "Última actualización: abril de 2026 · Aplica a Sketchline para iPadOS",
+      disclaimer: "Traducción ofrecida por comodidad — la versión en inglés es la vinculante.",
+      h_overview: "Resumen",
+      p_overview: "Sketchline es una aplicación de dibujo. Tus dibujos permanecen en tu dispositivo. La aplicación no envía tus obras ni datos personales a ningún servidor operado por Achim Braml.",
+      h_drawings: "Dibujos y obras",
+      p_drawings: "Todos los dibujos se guardan localmente en tu dispositivo mediante SwiftData. Las obras nunca se transmiten a servidores externos. Los archivos exportados (PNG, PDF, .sketchline) van únicamente adonde tú decidas enviarlos — eso queda enteramente bajo tu control.",
+      h_photos: "Acceso a la fototeca",
+      p_photos: "Sketchline puede solicitar acceso a tu fototeca para importar imágenes de referencia. Las fotos se copian al dibujo como datos incrustados y el original no se modifica. La aplicación no sube fotos a ningún sitio.",
+      h_icloud: "Sincronización con iCloud",
+      p_icloud: "Una versión futura de Sketchline podrá ofrecer sincronización con iCloud. Esta sección se actualizará cuando la función esté disponible.",
+      h_ads: "Publicidad",
+      p_ads_1: "La versión gratuita muestra anuncios mediante Google AdMob. AdMob puede recopilar identificadores del dispositivo en función de tu consentimiento de Transparencia de Seguimiento de Apps. Si rechazas el seguimiento, se mostrarán anuncios no personalizados. La suscripción «Quitar anuncios» elimina toda la publicidad.",
+      p_ads_2: 'Consulta la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a> para más detalles.',
+      h_subs: "Suscripciones",
+      p_subs: "Las gestiona Apple a través de StoreKit 2. Achim Braml no tiene acceso a ningún dato de pago.",
+      h_delete: "Eliminación de datos",
+      p_delete: "Elimina la aplicación para borrar todos los datos locales. No se conserva ningún dato externamente.",
+      h_children: "Privacidad de los menores",
+      p_children: "Sketchline no está dirigida a menores de 13 años.",
+      h_changes: "Cambios",
+      p_changes: "Las actualizaciones de esta política se publicarán en esta misma URL con una fecha revisada.",
+      h_contact: "Contacto",
+      link_terms: "Condiciones de uso",
+      link_home: "Inicio"
+    },
+    fr: {
+      pageTitle: "Politique de confidentialité — Sketchline",
+      title: "Politique de confidentialité",
+      meta: "Dernière mise à jour : avril 2026 · S’applique à Sketchline pour iPadOS",
+      disclaimer: "Traduction fournie à titre indicatif — la version anglaise fait foi.",
+      h_overview: "Vue d’ensemble",
+      p_overview: "Sketchline est une application de dessin. Vos dessins restent sur votre appareil. L’application ne transmet ni vos œuvres ni vos données personnelles à un serveur exploité par Achim Braml.",
+      h_drawings: "Dessins et œuvres",
+      p_drawings: "Tous les dessins sont stockés localement sur votre appareil via SwiftData. Les œuvres ne sont jamais transmises à des serveurs externes. Les fichiers exportés (PNG, PDF, .sketchline) ne vont que là où vous choisissez de les envoyer — cela reste entièrement sous votre contrôle.",
+      h_photos: "Accès à la photothèque",
+      p_photos: "Sketchline peut demander l’accès à votre photothèque pour importer des images de référence. Les photos sont copiées dans le dessin sous forme de données intégrées ; l’original n’est pas modifié. L’application ne télécharge aucune photo où que ce soit.",
+      h_icloud: "Synchronisation iCloud",
+      p_icloud: "Une future version de Sketchline pourra proposer la synchronisation iCloud. Cette section sera mise à jour dès que la fonctionnalité sera disponible.",
+      h_ads: "Publicité",
+      p_ads_1: "La version gratuite affiche des publicités via Google AdMob. AdMob peut collecter des identifiants d’appareil selon votre consentement à la Transparence du suivi des apps. Refuser le suivi affiche des publicités non personnalisées. L’abonnement « Supprimer les publicités » désactive toute publicité.",
+      p_ads_2: 'Pour plus de détails, consultez la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>.',
+      h_subs: "Abonnements",
+      p_subs: "Gérés par Apple via StoreKit 2. Aucune donnée de paiement n’est accessible à Achim Braml.",
+      h_delete: "Suppression des données",
+      p_delete: "Supprimez l’application pour effacer toutes les données locales. Aucune donnée n’est conservée à l’extérieur.",
+      h_children: "Confidentialité des enfants",
+      p_children: "Sketchline n’est pas destinée aux enfants de moins de 13 ans.",
+      h_changes: "Modifications",
+      p_changes: "Les mises à jour de cette politique seront publiées à cette URL avec une date révisée.",
+      h_contact: "Contact",
+      link_terms: "Conditions d’utilisation",
+      link_home: "Accueil"
+    }
+  };
+
+  function applyLang(lang) {
+    if (!translations[lang]) lang = 'en';
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+    if (t.pageTitle) document.title = t.pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] != null) el.innerHTML = t[key];
+    });
+    const notice = document.querySelector('.lang-notice');
+    if (notice) {
+      if (lang === 'en' || !t.disclaimer) {
+        notice.hidden = true;
+      } else {
+        notice.hidden = false;
+        notice.textContent = t.disclaimer;
+      }
+    }
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang(document.documentElement.dataset.initialLang || 'en');
+</script>
 </body>
 </html>

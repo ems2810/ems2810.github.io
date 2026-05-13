@@ -3,15 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Achim Braml — iOS Apps</title>
+<title>iOS Apps — Achim Braml</title>
 <meta name="description" content="Independent iOS developer. Building thoughtful apps for iPhone and iPad.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-  /* HOMEPAGE-SPECIFIC STYLES (shared tokens, reset, nav, focus, motion → shared.css) */
-
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 1.75rem; list-style: none; margin-left: auto; }
   .nav-links a {
     font-size: 0.875rem;
     font-weight: 400;
@@ -21,7 +17,6 @@
   }
   .nav-links a:hover { color: var(--ink); }
 
-  /* HERO */
   .hero {
     padding: 6rem 2rem 5rem;
     max-width: 680px;
@@ -29,48 +24,34 @@
     border-bottom: 1px solid var(--rule);
   }
   .hero-eyebrow {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--purple);
+    color: var(--ink-faint);
     margin-bottom: 1.25rem;
   }
   .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 600;
     line-height: 1.15;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     color: var(--ink);
     margin-bottom: 1.5rem;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--purple);
   }
   .hero p {
     font-size: 1rem;
     color: var(--ink-muted);
     max-width: 520px;
-    line-height: 1.75;
+    line-height: 1.7;
   }
 
-  /* SECTION */
   .section {
     max-width: 680px;
     margin: 0 auto;
     padding: 4rem 2rem;
   }
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-bottom: 2.5rem;
-  }
 
-  /* APP CARD */
   .app-card {
     display: grid;
     grid-template-columns: 64px minmax(0, 1fr);
@@ -101,22 +82,22 @@
     flex-wrap: wrap;
   }
   .app-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--ink);
   }
   .badge {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 2px 8px;
     border-radius: 20px;
+    background: rgba(0,0,0,0.05);
+    color: var(--ink-muted);
   }
-  .badge-live { background: rgba(15,110,86,0.12); color: var(--green); }
-  .badge-beta { background: rgba(83,74,183,0.12); color: var(--purple); }
-  .badge-dev  { background: rgba(90,90,90,0.12); color: var(--ink-muted); }
+  .badge-beta { background: rgba(83,74,183,0.1); color: var(--accent); }
 
   .app-sub {
     font-size: 1rem;
@@ -147,13 +128,13 @@
     font-size: 0.875rem;
     font-weight: 500;
     color: white;
-    background: var(--purple);
+    background: var(--accent);
     padding: 0.55rem 1.1rem;
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.2s;
   }
-  .btn-primary:hover { background: var(--purple-dark); }
+  .btn-primary:hover { background: var(--accent-dark); }
 
   .app-link {
     font-size: 0.875rem;
@@ -179,31 +160,22 @@
   .app-legal a:hover { color: var(--ink-muted); }
   .app-legal .sep { margin: 0 0.4rem; opacity: 0.6; }
 
-  /* FOOTER (homepage variant — overrides shared subpage footer) */
   footer {
     max-width: 680px;
-    margin: 0 auto;
     padding: 2.5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border-top: 1px solid var(--rule);
   }
 
   @media (max-width: 540px) {
     .hero, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
     footer { padding-left: 1.25rem; padding-right: 1.25rem; }
     .hero { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-    .nav-links { gap: 1rem; }
+    .nav-links { gap: 1.25rem; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-brand">Achim Braml</a>
   <ul class="nav-links">
     <li><a href="#apps">Apps</a></li>
     <li><a href="beta/sketchline.html">Beta</a></li>
@@ -215,14 +187,12 @@
 
   <section class="hero">
     <p class="hero-eyebrow">Independent iOS Developer</p>
-    <h1>Apps built with<br><em>care and purpose</em></h1>
-    <p>I build small, focused iOS apps that solve real problems — for household finances, music, and creative work.</p>
+    <h1>Apps built with care and purpose</h1>
+    <p>Small, focused iOS apps that solve real problems — for household finances, music, and creative work.</p>
   </section>
 
   <section class="section" id="apps">
-    <p class="section-label">Apps</p>
 
-    <!-- Track Tailor -->
     <div class="app-card">
       <div class="app-icon">
         <img src="icons/tracktailor.png" alt="Track Tailor app icon" width="64" height="64">
@@ -230,7 +200,7 @@
       <div class="app-meta">
         <div class="app-name-row">
           <span class="app-name">Track Tailor</span>
-          <span class="badge badge-live">Live</span>
+          <span class="badge">Live</span>
         </div>
         <p class="app-sub">Dynamic Apple Music playlists</p>
         <p class="app-desc">Define filter rules — artists, genres, keywords, date ranges — and the app maintains your Apple Music playlists automatically.</p>
@@ -244,7 +214,6 @@
       </div>
     </div>
 
-    <!-- Sketchline -->
     <div class="app-card">
       <div class="app-icon">
         <img src="icons/sketchline.png" alt="Sketchline app icon" width="64" height="64">
@@ -268,7 +237,6 @@
       </div>
     </div>
 
-    <!-- Folio Home -->
     <div class="app-card coming-soon">
       <div class="app-icon">
         <img src="icons/foliohome.png" alt="Folio Home app icon" width="64" height="64">
@@ -276,7 +244,7 @@
       <div class="app-meta">
         <div class="app-name-row">
           <span class="app-name">Folio Home</span>
-          <span class="badge badge-dev">Coming Soon</span>
+          <span class="badge">Coming Soon</span>
         </div>
         <p class="app-sub">Household budget &amp; finance</p>
         <p class="app-desc">Track income, recurring expenses, and savings across a multi-member household. Gross-to-net salary calculator with bundled tax data for DE, AT, CH, and more.</p>
@@ -291,7 +259,7 @@
 </main>
 
 <footer>
-  <span class="footer-name">Achim Braml</span>
+  <span class="footer-name">© Achim Braml</span>
   <ul class="footer-links">
     <li><a href="mailto:gourd_pulp.9b@icloud.com">Email</a></li>
   </ul>

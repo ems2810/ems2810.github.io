@@ -1,5 +1,5 @@
 # ems2810.github.io — Homepage Specification
-**Version 1.3 — May 9, 2026**
+**Version 1.4 — May 13, 2026**
 
 ---
 
@@ -130,64 +130,66 @@ All `*-terms.html` files should redirect to or prominently link this URL. No cus
 
 ## 5. Design System
 
-`shared.css` is the **single source of truth**. The `<style>`-Block in `index.html` darf nur seitenspezifische Regeln enthalten; alles Geteilte gehört in `shared.css`.
+`shared.css` ist die **Single Source of Truth**. Der `<style>`-Block in `index.html` enthält nur seitenspezifische Regeln; alles Geteilte gehört in `shared.css`.
+
+**Design-Prinzip (ab v1.4):** Ruhig, neutral, Apple-Stil. Schwarz/Weiß/Grau + **ein** Akzent. Keine externen Webfonts.
 
 ### 5.1 Color Tokens
 
 | Token | Value | Role | WCAG-Notiz |
 |---|---|---|---|
-| `--ink` | `#1a1a1a` | Primary text | passt überall |
-| `--ink-muted` | `#5a5a5a` | Secondary text (descriptions) | ~7:1 auf `--paper`, AA ✓ |
-| `--ink-faint` | `#6c6c6c` | Tertiärer Text, Meta-Labels | ~4,9:1 auf `--paper`, AA ✓ |
-| `--paper` | `#f7f4ef` | Page background | — |
-| `--paper-warm` | `#ede9e1` | Card/box background | — |
-| `--rule` | `rgba(0,0,0,0.1)` | Hairlines, dividers | nur für Linien, nicht für Text |
-| `--purple` | `#534AB7` | Brand / Primary CTA / Beta-Akzent | ~7,4:1 auf paper, AA ✓ |
-| `--purple-light` | `#7A72D6` | Hover/Decorative-only (kein Body-Text) | ~4,0:1 — nur für Großtext (≥18 px) |
-| `--green` | `#0F6E56` | Live-Status-Akzent | AA ✓ |
-| `--green-light` | `#1DA882` | Decorative-only | nicht für Text |
+| `--ink` | `#111111` | Primary text | passt überall |
+| `--ink-muted` | `#555555` | Secondary text (descriptions) | ~7,4:1 auf weiß, AA ✓ |
+| `--ink-faint` | `#767676` | Tertiärer Text, Meta-Labels | ~4,5:1 auf weiß, AA ✓ |
+| `--paper` | `#ffffff` | Page background | — |
+| `--paper-warm` | `#fafafa` | Sehr leichte Flächen, Hover-States | — |
+| `--rule` | `rgba(0,0,0,0.08)` | Hairlines, dividers | nur für Linien, nicht für Text |
+| `--accent` | `#534AB7` | Primary CTA, Beta-Badge, Links | ~7,4:1 auf weiß, AA ✓ |
+| `--accent-dark` | `#443BA8` | Hover-State Button | — |
 
-**Regel:** Wer einen Token für Text-Inhalt verwendet, muss den Kontrast prüfen. Tokens mit Kontrast unter 4,5:1 sind als „decorative-only" markiert und für Body-Text tabu.
+**Regel:** Genau ein Akzent. Keine zusätzlichen Farbfamilien (Grün, Light-Variants etc.) — Status wird durch Graustufen + Text vermittelt, nicht durch Farbe.
 
 ### 5.2 Typography
 
-- **Display:** `DM Serif Display` — Hero h1, App-Namen, Section-Headings
-- **Body:** `DM Sans` 300/400/500 — Fließtext, Labels, Buttons
+- **Eine** Schriftfamilie: System-Stack — `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`. Keine externe Google-Font, kein Display/Body-Split.
+- Hierarchie ausschließlich über Größe und Gewicht (`400` / `500` / `600`).
 - **Skala (max. 6 Stufen):**
 
-| Use | Size |
-|---|---|
-| Mikro (Badges, Eyebrows) | `0.75rem` |
-| Klein (Sekundär-Links, Meta) | `0.875rem` |
-| Body | `1rem` |
-| App-Name / Subhead | `1.25rem` |
-| Page-H1 (Subseiten) | `2.25rem` |
-| Hero-H1 | `clamp(2.4rem, 5vw, 3.5rem)` |
+| Use | Size | Weight |
+|---|---|---|
+| Mikro (Badges, Eyebrows) | `0.6875–0.75rem` | 500 |
+| Klein (Sekundär-Links, Meta) | `0.875rem` | 400/500 |
+| Body | `1rem` | 400 |
+| App-Name / H2 | `1.125rem` | 600 |
+| Page-H1 (Subseiten) | `2.25rem` | 600 |
+| Hero-H1 | `clamp(2.25rem, 5vw, 3.25rem)` | 600 |
 
-Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) sind zu vermeiden — Drift ohne wahrnehmbaren Nutzen.
+Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift ohne wahrnehmbaren Nutzen.
 
 ### 5.3 Spacing & Radius
 
-- **Eckenradien:** `8px` Container (Card, Button), `14px` App-Icon, Pill (`20px`+) für Badges. Keine weiteren Werte.
-- **Layout-Breite:** `max-width: 680px` für die Homepage, `640px` für Subseiten. Padding `2rem` Desktop / `1.25rem` ab 540 px abwärts.
+- **Eckenradien:** `8px` Container/Button, `14px` App-Icon, `20px+` Pill (Badges, Language-Pills). Keine weiteren Werte.
+- **Layout-Breite:** `max-width: 680px` Homepage, `640px` Subseiten. Padding `2rem` Desktop / `1.25rem` ab 540 px abwärts.
 
 ### 5.4 Components
 
 - **App Card:** Grid `64px` Icon + `minmax(0, 1fr)` Content, `1.25rem` Gap. Border-Top als Trenner (`--rule`). Erste Card ohne Border.
-- **Badge:** Pill, `0.6875rem`, uppercase, `padding: 2px 8px`. Drei Varianten: `badge-live` (grün-tint), `badge-beta` (purple-tint), `badge-dev` (grau-tint).
-- **Primär-CTA:** Solider Button — `--purple` Hintergrund, weißer Text, `8px` Radius, `0.5rem 1.1rem` Padding. Genau **eine** visuelle Form pro Aktion (siehe §8 Issue „CTA-Inkonsistenz").
+- **Badge:** Pill, `0.6875rem`, uppercase, `padding: 2px 8px`. Default = grau (`rgba(0,0,0,0.05)` + `--ink-muted`). Nur `.badge-beta` trägt den Akzent (Purple-Tint).
+- **Primär-CTA:** Solider Button — `--accent` Hintergrund, weißer Text, `8px` Radius, `0.5rem 1.1rem` Padding. Eine visuelle Form pro Aktion.
 - **Sekundär-Link:** Inline, Underline (`border-bottom`), `--ink-muted`.
-- **Coming-Soon-Card:** Icon `opacity: 0.55` + `grayscale(0.4)`, App-Name in `--ink-muted`. Kein Link-Bereich → stattdessen Text „verfügbar in …" oder `mailto:`-Notify.
+- **Coming-Soon-Card:** Icon `opacity: 0.55` + `grayscale(0.4)`, App-Name in `--ink-muted`. Kein Link-Bereich → `mailto:`-Notify.
+- **Nav:** Sticky, weißer Backdrop-Blur, keine Brand-Mark im Header (nur Footer trägt Namen/Copyright).
+- **Language-Switch:** Vier Pill-Buttons (`EN · DE · ES · FR`) rechts in der Nav. Aktiver Status: schwarzer Border + `--ink` Text. Werte werden in `localStorage` unter `lang` gespeichert; Initialwert via `navigator.language` (Fallback `en`).
 
 ---
 
 ## 6. App Status Indicators
 
-| Status | Badge-Klasse | Icon-Treatment | CTA |
+| Status | Badge | Icon-Treatment | CTA |
 |---|---|---|---|
-| Live on App Store | `.badge-live` (grün) | normal | Primär-Button „App Store →" |
-| TestFlight Beta | `.badge-beta` (purple) | normal | Primär-Button „Join Beta →" |
-| In Development | `.badge-dev` (grau) | desaturiert + opacity 0.55 | Kein primärer Link; optional `mailto:` für „Notify me" |
+| Live on App Store | Default grau (`Live`) | normal | Primär-Button „App Store →" |
+| TestFlight Beta | `.badge-beta` (purple-tint) | normal | Primär-Button „Join Beta →" |
+| In Development | Default grau (`Coming Soon`) | desaturiert + opacity 0.55 | Kein primärer Link; `mailto:` „Email me when it ships" |
 
 ---
 
@@ -199,6 +201,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) sind zu vermeiden —
 | 1.1 | 2026-05-09 | Spec created; real file structure documented; Terms of Use → Apple EULA; missing pages identified |
 | 1.2 | 2026-05-09 | Design-System konkretisiert (Token-Rollen, Typo-Skala, Radius-Set); Accessibility-Anforderungen (§8); Known-Issues-Backlog aus Design-Review (§9); Spec aus Downloads in Repo verschoben |
 | 1.3 | 2026-05-09 | Backlog §9 umgesetzt: Kontrast-Fix (`--ink-faint` → `#6c6c6c`), Cards entrümpelt (Privacy/Terms/Copyright als kleine Legal-Zeile), `.btn-primary` für alle primären CTAs, Folio-Home Notify-Affordance, Early-Access-Sektion entfernt + Nav-Beta auf `beta/sketchline.html`, CSS-Duplikation aufgelöst (shared.css verlinkt), `:focus-visible` + `prefers-reduced-motion`, Hero-Em auf `--purple`, App-Sub ohne Italic, Brand-Mark ausgeschrieben |
+| 1.4 | 2026-05-13 | Design-Refresh: System-Font-Stack statt DM Serif/DM Sans (keine externen Webfonts mehr), weißer Hintergrund statt warmes Beige, **ein** Akzent (Purple) — Green-Tokens und Purple-Light entfernt. „Achim Braml" Nav-Brand auf allen Seiten entfernt; Name nur noch im Footer. Sketchline `privacy` + `terms`: 4-Sprachen-Switcher (EN/DE/ES/FR) mit Auto-Erkennung via `navigator.language`, `localStorage`-Persistenz und Disclaimer für nicht-englische Versionen. |
 
 ---
 
@@ -243,5 +246,18 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) sind zu vermeiden —
 
 ---
 
+## 10. Localization (Legal Pages)
+
+Mehrsprachige Legal-Seiten (aktuell `legal/sketchline-privacy.html` + `legal/sketchline-terms.html`):
+
+- **Unterstützte Sprachen:** EN (authoritative), DE, ES, FR.
+- **Mechanismus:** Pure client-side. Inline-Script im `<head>` setzt `<html lang>` vor dem ersten Paint anhand `localStorage('lang')` oder `navigator.language` (Prefix-Match). Inhalte tragen `data-i18n="key"`, ein zweites Script tauscht `innerHTML` aus dem `translations`-Objekt.
+- **Switcher:** Vier Pill-Buttons in der Nav (`.lang-switch`). Klick aktualisiert UI und `localStorage`.
+- **Disclaimer:** Bei jeder nicht-englischen Sprache erscheint zwischen Meta und erstem Abschnitt ein kursiver Hinweis: *„Translation provided for convenience — the English version is authoritative."* (sprachspezifisch). Englisch zeigt keinen Disclaimer.
+- **Authoritative Version:** EN. ES/FR sind „best effort"-Übersetzungen ohne juristisches Lektorat.
+- **Erweiterung auf andere Legal-Seiten** (Track Tailor, Folio Home, Copyright-Seiten): bei Bedarf nach demselben Muster — Translation-Objekt + `data-i18n` Attribute.
+
+---
+
 *Homepage Spec — ems2810.github.io*
-*Last updated: May 9, 2026*
+*Last updated: May 13, 2026*

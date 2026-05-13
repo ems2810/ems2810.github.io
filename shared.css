@@ -1,31 +1,30 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink: #1a1a1a;
-  --ink-muted: #5a5a5a;
-  --ink-faint: #6c6c6c;
-  --paper: #f7f4ef;
-  --paper-warm: #ede9e1;
-  --rule: rgba(0,0,0,0.1);
-  --purple: #534AB7;
-  --purple-dark: #443BA8;
-  --purple-light: #7A72D6;
-  --green: #0F6E56;
-  --green-light: #1DA882;
+  --ink: #111111;
+  --ink-muted: #555555;
+  --ink-faint: #767676;
+  --paper: #ffffff;
+  --paper-warm: #fafafa;
+  --rule: rgba(0,0,0,0.08);
+  --accent: #534AB7;
+  --accent-dark: #443BA8;
 }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :focus-visible {
-  outline: 2px solid var(--purple);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -43,16 +42,10 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2rem;
   height: 56px;
-  background: rgba(247,244,239,0.9);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--rule);
-}
-.nav-brand {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.1rem;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: -0.02em;
 }
 .nav-back {
   font-size: 0.875rem;
@@ -60,6 +53,25 @@ nav {
   text-decoration: none;
 }
 .nav-back:hover { color: var(--ink); }
+
+.lang-switch { display: flex; gap: 0.25rem; }
+.lang-switch button {
+  font: inherit;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-faint);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.lang-switch button:hover { color: var(--ink); border-color: var(--ink-muted); }
+.lang-switch button.active {
+  color: var(--ink);
+  border-color: var(--ink);
+}
 
 .page {
   max-width: 640px;
@@ -77,9 +89,9 @@ nav {
 }
 
 .page h1 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.25rem;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
@@ -92,10 +104,19 @@ nav {
   border-bottom: 1px solid var(--rule);
 }
 
+.lang-notice {
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+  font-style: italic;
+  border-left: 3px solid var(--rule);
+  padding: 0.25rem 0 0.25rem 0.75rem;
+  margin: -1.5rem 0 2.5rem;
+}
+
 .page h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
@@ -104,7 +125,7 @@ nav {
   font-size: 1rem;
   color: var(--ink-muted);
   margin-bottom: 1rem;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .page ul {
@@ -119,7 +140,25 @@ nav {
   line-height: 1.7;
 }
 
-.page a { color: var(--purple); }
+.page a { color: var(--accent); }
+
+.btn-eula {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white !important;
+  background: var(--accent);
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-eula:hover { background: var(--accent-dark); }
+
+.redirect-note {
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+}
 
 footer {
   max-width: 640px;
@@ -133,7 +172,6 @@ footer {
   gap: 1rem;
 }
 .footer-name {
-  font-family: 'DM Serif Display', serif;
   font-size: 0.875rem;
   color: var(--ink-faint);
 }
