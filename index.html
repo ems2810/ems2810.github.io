@@ -155,18 +155,26 @@
 
   .btn-testflight {
     display: inline-flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    height: 44px;
+    height: 56px;
     padding: 0 1.1rem;
     background: #000;
     color: #fff;
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    border-radius: 8px;
+    border-radius: 9px;
     text-decoration: none;
+    line-height: 1.05;
     transition: opacity 0.2s;
+  }
+  .btn-testflight .tf-line-1 {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .btn-testflight .tf-line-2 {
+    font-size: 1.3125rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
   .btn-testflight:hover { opacity: 0.8; }
   .btn-testflight:focus-visible {
@@ -267,7 +275,10 @@
         <p class="app-desc">A focused drawing app built for Apple Pencil. Natural brush engine, hover previews, and a minimal interface that stays out of the way.</p>
         <p class="app-tech">iPadOS 17 · Apple Pencil · 100 tester slots</p>
         <div class="app-actions">
-          <a href="https://testflight.apple.com/join/WyqxGCUU" class="btn-testflight">Join the Beta on TestFlight</a>
+          <a href="https://testflight.apple.com/join/WyqxGCUU" class="btn-testflight" aria-label="Join the Sketchline Beta on TestFlight">
+            <span class="tf-line-1">Join the Beta on</span>
+            <span class="tf-line-2">TestFlight</span>
+          </a>
           <a href="beta/sketchline.html" class="app-link">About the beta</a>
           <a href="apps/sketchline-support.html" class="app-link">Support</a>
         </div>
