@@ -3,6 +3,8 @@
 .AppleDouble
 .LSOverride
 Icon?
+!icons/
+!icons/**
 
 # Jekyll / GitHub Pages build output
 _site/

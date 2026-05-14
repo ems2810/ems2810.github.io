@@ -136,6 +136,23 @@
   }
   .btn-primary:hover { background: var(--accent-dark); }
 
+  .appstore-badge {
+    display: inline-block;
+    line-height: 0;
+    transition: opacity 0.2s;
+  }
+  .appstore-badge img {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+  .appstore-badge:hover { opacity: 0.8; }
+  .appstore-badge:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+
   .app-link {
     font-size: 0.875rem;
     font-weight: 500;
@@ -205,7 +222,9 @@
         <p class="app-sub">Dynamic Apple Music playlists</p>
         <p class="app-desc">Define filter rules — artists, genres, keywords, date ranges — and the app maintains your Apple Music playlists automatically.</p>
         <div class="app-actions">
-          <a href="https://apps.apple.com/us/app/track-tailor/id6761209212" class="btn-primary">App Store →</a>
+          <a href="https://apps.apple.com/us/app/track-tailor/id6761209212" class="appstore-badge" aria-label="Download Track Tailor on the App Store">
+            <img src="icons/app-store-badge.svg" alt="Download on the App Store">
+          </a>
           <a href="apps/playlistgenerator-support.html" class="app-link">Support</a>
         </div>
         <p class="app-legal">
