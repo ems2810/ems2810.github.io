@@ -70,6 +70,40 @@
     <p class="tf-note">TestFlight is Apple's free beta testing platform. The beta may contain bugs — please report them via the TestFlight feedback button or by email.</p>
   </div>
 
+  <h2>What's new in this beta</h2>
+  <p style="color: var(--ink-faint); font-size: 0.875rem; margin-top: -0.25rem; margin-bottom: 1rem;">Version 1.1.1 · Build 88</p>
+
+  <h3 style="font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Better genre searches</h3>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span><strong>Fusion genres find the right artists again.</strong> Genres with two parents (e.g. <em>Country Rock</em>, <em>Folk Rock</em>) were collapsing to almost zero artists. They now resolve correctly — Country Rock went from 1 artist back to ~40 artists / 5,000+ tracks.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Curated genre list always counts.</strong> The bundled list of artists per genre is now merged with the online sources instead of only being used when the online sources return nothing. Hundreds of curated artists (Hardcore family, Country Rock, …) that were previously invisible are now included in every sync.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Fewer false positives in niche genres.</strong> Layered filtering against Apple Music's own genre families keeps unrelated artists (e.g. mainstream pop in a Hardcore Techno search) out of the results.</span></li>
+  </ul>
+
+  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Sync is more reliable</h3>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span><strong>Long syncs resume where they left off.</strong> If iOS closes the app mid-sync or you force-quit, the next launch continues from the artist you stopped at instead of starting over.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Resume survives multiple interruptions.</strong> A sync that's been suspended by iOS more than once no longer gets discarded.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Honest sync duration.</strong> The reported duration now sums all resumed segments — not just the last one — and excludes the time the app was closed.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Cancel stops immediately.</strong> Tapping Cancel halts the visible progress right away instead of letting in-flight searches keep updating the row for several seconds.</span></li>
+  </ul>
+
+  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Smaller fixes</h3>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span><strong>Album release date is used for "Last N days" filters</strong> instead of the original master-recording date, so newly released remixes and re-releases now appear in Release-Radar-style playlists.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Tracks from the same album stay grouped together</strong> in the resulting playlist.</span></li>
+    <li><span class="feat-dot"></span><span><strong>The Sync Complete alert no longer dismisses an open sheet</strong> (Wizard, Settings, Subscription). Your in-progress edit stays where it is.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Share button opens the system share sheet directly</strong> — no more intermediate sheet with a single "Share…" link.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Live Activity for an actively running sync is preserved</strong> when you tap it open, instead of disappearing while the sync continues silently.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Playlist overview shows track counts instantly</strong> from cache instead of waiting 20–60 s on cold start for large libraries.</span></li>
+  </ul>
+
+  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Localization</h3>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span><strong>Full German, Spanish, and French translations</strong> for date ranges ("Last 7 Days"), progress strings ("Searching 12 of 40 artists…"), filter summary chips, genre source captions, mail templates, and the track count — previously many of these stayed English even when the rest of the UI was translated.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Correct singular/plural</strong> ("1 track" vs "12 tracks") across all four languages.</span></li>
+  </ul>
+
   <h2>What's in Track Tailor</h2>
   <ul class="feature-list">
     <li><span class="feat-dot"></span><span>Dynamic Apple Music playlists that update themselves based on your filter rules</span></li>
