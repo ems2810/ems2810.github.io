@@ -5,61 +5,253 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Track Tailor</title>
 <link rel="stylesheet" href="../shared.css">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('lang'); } catch (e) {}
+    var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    var supported = ['en', 'de', 'es', 'fr'];
+    var lang = supported.indexOf(stored) >= 0 ? stored
+             : (supported.indexOf(browser) >= 0 ? browser : 'en');
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.initialLang = lang;
+  })();
+</script>
 </head>
 <body>
 <nav>
   <a href="../index.html" class="nav-back">← Back</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="de">DE</button>
+    <button type="button" data-lang="es">ES</button>
+    <button type="button" data-lang="fr">FR</button>
+  </div>
 </nav>
 
 <main class="page">
   <p class="page-eyebrow">Track Tailor</p>
-  <h1>Privacy Policy</h1>
-  <p class="page-meta">Last updated: April 2026 · Applies to Track Tailor for iOS</p>
+  <h1 data-i18n="title">Privacy Policy</h1>
+  <p class="page-meta" data-i18n="meta">Last updated: May 2026 · Applies to Track Tailor for iOS</p>
+  <p class="lang-notice" data-i18n="disclaimer" hidden></p>
 
-  <h2>Overview</h2>
-  <p>Track Tailor is designed with privacy in mind. The app does not collect personal data, does not run its own servers, and does not share information with third parties beyond what is described below.</p>
+  <h2 data-i18n="h_overview">Overview</h2>
+  <p data-i18n="p_overview">Track Tailor is designed with privacy in mind. The app does not collect personal data, does not run its own servers, and does not share information with third parties beyond what is described below.</p>
 
-  <h2>Data stored on your device</h2>
-  <p>All playlist configurations, filter rules, and sync history are stored locally on your device in an SQLite database. This data never leaves your device except through iCloud sync (see below) and does not contain any personally identifiable information beyond what you enter voluntarily.</p>
+  <h2 data-i18n="h_local">Data stored on your device</h2>
+  <p data-i18n="p_local">All playlist configurations, filter rules, and sync history are stored locally on your device in an SQLite database. This data never leaves your device except through iCloud sync (see below) and does not contain any personally identifiable information beyond what you enter voluntarily.</p>
 
-  <h2>iCloud sync</h2>
-  <p>If you have iCloud enabled, playlist configurations are synced across your devices using Apple's CloudKit private database. This data is stored in your personal iCloud account and is only accessible to you. Achim Braml has no access to your iCloud data.</p>
+  <h2 data-i18n="h_icloud">iCloud sync</h2>
+  <p data-i18n="p_icloud">If you have iCloud enabled, playlist configurations are synced across your devices using Apple's CloudKit private database. This data is stored in your personal iCloud account and is only accessible to you. Achim Braml has no access to your iCloud data.</p>
 
-  <h2>Apple Music access</h2>
-  <p>The app requests access to your Apple Music library to create and manage playlists on your behalf. Music catalog searches are performed via Apple's MusicKit framework. The app does not store your Apple Music credentials — authentication is handled entirely by Apple.</p>
+  <h2 data-i18n="h_music">Apple Music access</h2>
+  <p data-i18n="p_music">The app requests access to your Apple Music library to create and manage playlists on your behalf. Music catalog searches are performed via Apple's MusicKit framework. The app does not store your Apple Music credentials — authentication is handled entirely by Apple.</p>
 
-  <h2>Advertising</h2>
-  <p>The free tier of Track Tailor shows banner ads provided by Google AdMob. AdMob may collect device advertising identifiers and usage data for ad personalization, subject to your App Tracking Transparency (ATT) consent. If you deny tracking, non-personalized ads are shown. Purchasing the Remove Ads subscription removes all advertising from the app.</p>
-  <p>For details on how Google uses data, see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+  <h2 data-i18n="h_ads">Advertising</h2>
+  <p data-i18n="p_ads_1">The free tier of Track Tailor shows banner ads provided by Google AdMob. AdMob may collect device advertising identifiers and usage data for ad personalization, subject to your App Tracking Transparency (ATT) consent. If you deny tracking, non-personalized ads are shown. Purchasing the Remove Ads subscription removes all advertising from the app.</p>
+  <p data-i18n="p_ads_2">For details on how Google uses data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
-  <h2>Subscriptions</h2>
-  <p>Subscription purchases are processed by Apple via StoreKit. Achim Braml does not have access to your payment details. Purchase records are managed entirely by Apple.</p>
+  <h2 data-i18n="h_subs">Subscriptions</h2>
+  <p data-i18n="p_subs">Subscription purchases are processed by Apple via StoreKit. Achim Braml does not have access to your payment details. Purchase records are managed entirely by Apple.</p>
 
-  <h2>Push notifications</h2>
-  <p>The app may register for remote push notifications to receive CloudKit change signals. No notification content is stored or transmitted outside of Apple's infrastructure.</p>
+  <h2 data-i18n="h_push">Push notifications</h2>
+  <p data-i18n="p_push">The app may register for remote push notifications to receive CloudKit change signals. No notification content is stored or transmitted outside of Apple's infrastructure.</p>
 
-  <h2>Analytics and crash reporting</h2>
-  <p>The app does not include any third-party analytics or crash reporting SDK. Crash reports may be collected by Apple's standard diagnostic reporting if you have opted in via iOS Settings → Privacy → Analytics & Improvements.</p>
+  <h2 data-i18n="h_analytics">Analytics and crash reporting</h2>
+  <p data-i18n="p_analytics">The app does not include any third-party analytics or crash reporting SDK. Crash reports may be collected by Apple's standard diagnostic reporting if you have opted in via iOS Settings → Privacy → Analytics & Improvements.</p>
 
-  <h2>Data deletion</h2>
-  <p>You can delete all app data at any time by deleting the app from your device. iCloud data can be removed via Settings → [your name] → iCloud → Manage Storage. No data is retained on any external server.</p>
+  <h2 data-i18n="h_delete">Data deletion</h2>
+  <p data-i18n="p_delete">You can delete all app data at any time by deleting the app from your device. iCloud data can be removed via Settings → [your name] → iCloud → Manage Storage. No data is retained on any external server.</p>
 
-  <h2>Children's privacy</h2>
-  <p>Track Tailor is not directed at children under 13. The app does not knowingly collect data from children.</p>
+  <h2 data-i18n="h_children">Children's privacy</h2>
+  <p data-i18n="p_children">Track Tailor is not directed at children under 13. The app does not knowingly collect data from children.</p>
 
-  <h2>Changes to this policy</h2>
-  <p>If the privacy policy changes materially, the updated version will be published at this URL with a revised date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  <h2 data-i18n="h_changes">Changes to this policy</h2>
+  <p data-i18n="p_changes">If the privacy policy changes materially, the updated version will be published at this URL with a revised date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about privacy can be directed to: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
+  <h2 data-i18n="h_contact">Contact</h2>
+  <p data-i18n="p_contact">Questions about privacy can be directed to: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
 </main>
 
 <footer>
-  <span class="footer-name">Achim Braml</span>
+  <span class="footer-name">© Achim Braml</span>
   <ul class="footer-links">
-    <li><a href="playlistgenerator-terms.html">Terms of Use</a></li>
-    <li><a href="../index.html">Home</a></li>
+    <li><a href="playlistgenerator-terms.html" data-i18n="link_terms">Terms of Use</a></li>
+    <li><a href="playlistgenerator-copyright.html" data-i18n="link_copyright">Copyright</a></li>
+    <li><a href="../index.html" data-i18n="link_home">Home</a></li>
   </ul>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      pageTitle: "Privacy Policy — Track Tailor",
+      title: "Privacy Policy",
+      meta: "Last updated: May 2026 · Applies to Track Tailor for iOS",
+      h_overview: "Overview",
+      p_overview: "Track Tailor is designed with privacy in mind. The app does not collect personal data, does not run its own servers, and does not share information with third parties beyond what is described below.",
+      h_local: "Data stored on your device",
+      p_local: "All playlist configurations, filter rules, and sync history are stored locally on your device in an SQLite database. This data never leaves your device except through iCloud sync (see below) and does not contain any personally identifiable information beyond what you enter voluntarily.",
+      h_icloud: "iCloud sync",
+      p_icloud: "If you have iCloud enabled, playlist configurations are synced across your devices using Apple’s CloudKit private database. This data is stored in your personal iCloud account and is only accessible to you. Achim Braml has no access to your iCloud data.",
+      h_music: "Apple Music access",
+      p_music: "The app requests access to your Apple Music library to create and manage playlists on your behalf. Music catalog searches are performed via Apple’s MusicKit framework. The app does not store your Apple Music credentials — authentication is handled entirely by Apple.",
+      h_ads: "Advertising",
+      p_ads_1: "The free tier of Track Tailor shows banner ads provided by Google AdMob. AdMob may collect device advertising identifiers and usage data for ad personalization, subject to your App Tracking Transparency (ATT) consent. If you deny tracking, non-personalized ads are shown. Purchasing the Remove Ads subscription removes all advertising from the app.",
+      p_ads_2: 'For details on how Google uses data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a>.',
+      h_subs: "Subscriptions",
+      p_subs: "Subscription purchases are processed by Apple via StoreKit. Achim Braml does not have access to your payment details. Purchase records are managed entirely by Apple.",
+      h_push: "Push notifications",
+      p_push: "The app may register for remote push notifications to receive CloudKit change signals. No notification content is stored or transmitted outside of Apple’s infrastructure.",
+      h_analytics: "Analytics and crash reporting",
+      p_analytics: "The app does not include any third-party analytics or crash reporting SDK. Crash reports may be collected by Apple’s standard diagnostic reporting if you have opted in via iOS Settings → Privacy → Analytics & Improvements.",
+      h_delete: "Data deletion",
+      p_delete: "You can delete all app data at any time by deleting the app from your device. iCloud data can be removed via Settings → [your name] → iCloud → Manage Storage. No data is retained on any external server.",
+      h_children: "Children’s privacy",
+      p_children: "Track Tailor is not directed at children under 13. The app does not knowingly collect data from children.",
+      h_changes: "Changes to this policy",
+      p_changes: "If the privacy policy changes materially, the updated version will be published at this URL with a revised date. Continued use of the app after changes constitutes acceptance of the updated policy.",
+      h_contact: "Contact",
+      p_contact: 'Questions about privacy can be directed to: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_terms: "Terms of Use",
+      link_copyright: "Copyright",
+      link_home: "Home"
+    },
+    de: {
+      pageTitle: "Datenschutzerklärung — Track Tailor",
+      title: "Datenschutzerklärung",
+      meta: "Letzte Aktualisierung: Mai 2026 · Gilt für Track Tailor für iOS",
+      disclaimer: "Diese Übersetzung dient nur der Bequemlichkeit — maßgeblich ist die englische Fassung.",
+      h_overview: "Überblick",
+      p_overview: "Track Tailor wurde mit Blick auf Datenschutz entwickelt. Die App erhebt keine personenbezogenen Daten, betreibt keine eigenen Server und gibt keine Informationen an Dritte weiter — abgesehen von dem, was im Folgenden beschrieben ist.",
+      h_local: "Auf deinem Gerät gespeicherte Daten",
+      p_local: "Sämtliche Playlist-Konfigurationen, Filterregeln und Sync-Verläufe werden lokal auf deinem Gerät in einer SQLite-Datenbank gespeichert. Diese Daten verlassen dein Gerät nur über die iCloud-Synchronisierung (siehe unten) und enthalten keine personenbezogenen Informationen außer dem, was du freiwillig eingibst.",
+      h_icloud: "iCloud-Synchronisierung",
+      p_icloud: "Wenn iCloud aktiviert ist, werden Playlist-Konfigurationen über Apples private CloudKit-Datenbank zwischen deinen Geräten synchronisiert. Diese Daten liegen in deinem persönlichen iCloud-Konto und sind ausschließlich für dich zugänglich. Achim Braml hat keinen Zugriff auf deine iCloud-Daten.",
+      h_music: "Zugriff auf Apple Music",
+      p_music: "Die App benötigt Zugriff auf deine Apple-Music-Mediathek, um Playlists in deinem Namen zu erstellen und zu pflegen. Katalogsuchen laufen über Apples MusicKit-Framework. Die App speichert keine Apple-Music-Zugangsdaten — die Authentifizierung übernimmt ausschließlich Apple.",
+      h_ads: "Werbung",
+      p_ads_1: "Die kostenlose Version von Track Tailor zeigt Bannerwerbung über Google AdMob an. AdMob kann Geräte-Werbe-IDs und Nutzungsdaten zur Personalisierung erheben, sofern du der App-Tracking-Transparenz (ATT) zustimmst. Lehnst du Tracking ab, werden nicht personalisierte Anzeigen ausgespielt. Mit dem Abo „Werbung entfernen“ wird sämtliche Werbung deaktiviert.",
+      p_ads_2: 'Details findest du in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.',
+      h_subs: "Abonnements",
+      p_subs: "Abonnements werden von Apple über StoreKit abgewickelt. Achim Braml hat keinen Zugriff auf deine Zahlungsdaten. Kaufbelege werden vollständig von Apple verwaltet.",
+      h_push: "Push-Benachrichtigungen",
+      p_push: "Die App kann sich für Remote-Push-Benachrichtigungen registrieren, um CloudKit-Änderungssignale zu empfangen. Es werden keine Benachrichtigungsinhalte außerhalb der Apple-Infrastruktur gespeichert oder übertragen.",
+      h_analytics: "Analyse und Absturzberichte",
+      p_analytics: "Die App enthält kein Drittanbieter-SDK für Analyse oder Absturzberichte. Absturzberichte können über Apples Standard-Diagnose erfasst werden, sofern du das in den iOS-Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen aktiviert hast.",
+      h_delete: "Daten löschen",
+      p_delete: "Du kannst jederzeit alle App-Daten löschen, indem du die App von deinem Gerät entfernst. iCloud-Daten lassen sich über Einstellungen → [dein Name] → iCloud → Speicher verwalten löschen. Auf externen Servern werden keine Daten aufbewahrt.",
+      h_children: "Datenschutz für Kinder",
+      p_children: "Track Tailor richtet sich nicht an Kinder unter 13 Jahren. Die App erhebt wissentlich keine Daten von Kindern.",
+      h_changes: "Änderungen dieser Erklärung",
+      p_changes: "Wesentliche Änderungen dieser Datenschutzerklärung werden mit aktualisiertem Datum unter dieser URL veröffentlicht. Die fortgesetzte Nutzung der App nach einer Änderung gilt als Annahme der aktualisierten Erklärung.",
+      h_contact: "Kontakt",
+      p_contact: 'Fragen zum Datenschutz: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_terms: "Nutzungsbedingungen",
+      link_copyright: "Urheberrecht",
+      link_home: "Startseite"
+    },
+    es: {
+      pageTitle: "Política de privacidad — Track Tailor",
+      title: "Política de privacidad",
+      meta: "Última actualización: mayo de 2026 · Aplica a Track Tailor para iOS",
+      disclaimer: "Traducción ofrecida por comodidad — la versión en inglés es la vinculante.",
+      h_overview: "Resumen",
+      p_overview: "Track Tailor está diseñada con la privacidad en mente. La aplicación no recopila datos personales, no opera servidores propios y no comparte información con terceros más allá de lo descrito a continuación.",
+      h_local: "Datos almacenados en tu dispositivo",
+      p_local: "Todas las configuraciones de listas de reproducción, reglas de filtrado y el historial de sincronización se guardan localmente en tu dispositivo en una base de datos SQLite. Estos datos nunca salen de tu dispositivo, salvo a través de la sincronización con iCloud (ver más abajo), y no contienen información identificable más allá de lo que tú introduces voluntariamente.",
+      h_icloud: "Sincronización con iCloud",
+      p_icloud: "Si tienes iCloud activado, las configuraciones de las listas se sincronizan entre tus dispositivos mediante la base de datos privada CloudKit de Apple. Estos datos se almacenan en tu cuenta personal de iCloud y solo tú puedes acceder a ellos. Achim Braml no tiene acceso a tus datos de iCloud.",
+      h_music: "Acceso a Apple Music",
+      p_music: "La aplicación solicita acceso a tu biblioteca de Apple Music para crear y gestionar listas en tu nombre. Las búsquedas en el catálogo se realizan mediante el framework MusicKit de Apple. La aplicación no almacena tus credenciales de Apple Music — la autenticación la gestiona íntegramente Apple.",
+      h_ads: "Publicidad",
+      p_ads_1: "La versión gratuita de Track Tailor muestra anuncios de banner servidos por Google AdMob. AdMob puede recopilar identificadores publicitarios del dispositivo y datos de uso para personalizar anuncios, sujeto a tu consentimiento de Transparencia de Seguimiento de Apps (ATT). Si rechazas el seguimiento, se mostrarán anuncios no personalizados. La suscripción «Quitar anuncios» elimina toda la publicidad.",
+      p_ads_2: 'Para más detalles sobre cómo utiliza los datos Google, consulta la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a>.',
+      h_subs: "Suscripciones",
+      p_subs: "Las compras de suscripción las procesa Apple a través de StoreKit. Achim Braml no tiene acceso a tus datos de pago. Los registros de compra los gestiona enteramente Apple.",
+      h_push: "Notificaciones push",
+      p_push: "La aplicación puede registrarse para notificaciones push remotas con el fin de recibir señales de cambios de CloudKit. No se almacena ni transmite contenido de notificaciones fuera de la infraestructura de Apple.",
+      h_analytics: "Analítica e informes de errores",
+      p_analytics: "La aplicación no incluye ningún SDK de analítica o informes de errores de terceros. Apple puede recopilar informes de fallos a través de su sistema estándar de diagnóstico si has dado tu consentimiento en Ajustes de iOS → Privacidad → Análisis y mejoras.",
+      h_delete: "Eliminación de datos",
+      p_delete: "Puedes borrar todos los datos de la aplicación en cualquier momento eliminándola de tu dispositivo. Los datos de iCloud se pueden eliminar desde Ajustes → [tu nombre] → iCloud → Gestionar almacenamiento. No se conserva ningún dato en servidores externos.",
+      h_children: "Privacidad de los menores",
+      p_children: "Track Tailor no está dirigida a menores de 13 años. La aplicación no recopila a sabiendas datos de menores.",
+      h_changes: "Cambios en esta política",
+      p_changes: "Si la política de privacidad cambia de forma sustancial, la versión actualizada se publicará en esta URL con una fecha revisada. El uso continuado de la aplicación tras los cambios implica la aceptación de la política actualizada.",
+      h_contact: "Contacto",
+      p_contact: 'Preguntas sobre privacidad: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_terms: "Condiciones de uso",
+      link_copyright: "Derechos de autor",
+      link_home: "Inicio"
+    },
+    fr: {
+      pageTitle: "Politique de confidentialité — Track Tailor",
+      title: "Politique de confidentialité",
+      meta: "Dernière mise à jour : mai 2026 · S’applique à Track Tailor pour iOS",
+      disclaimer: "Traduction fournie à titre indicatif — la version anglaise fait foi.",
+      h_overview: "Vue d’ensemble",
+      p_overview: "Track Tailor est conçue dans le respect de la vie privée. L’application ne collecte aucune donnée personnelle, n’exploite aucun serveur et ne partage aucune information avec des tiers en dehors de ce qui est décrit ci-dessous.",
+      h_local: "Données stockées sur votre appareil",
+      p_local: "Toutes les configurations de listes de lecture, règles de filtrage et historiques de synchronisation sont stockés localement sur votre appareil dans une base de données SQLite. Ces données ne quittent jamais votre appareil, sauf via la synchronisation iCloud (voir ci-dessous), et ne contiennent aucune information personnellement identifiable au-delà de ce que vous saisissez volontairement.",
+      h_icloud: "Synchronisation iCloud",
+      p_icloud: "Si iCloud est activé, les configurations de listes sont synchronisées entre vos appareils via la base de données privée CloudKit d’Apple. Ces données sont stockées dans votre compte iCloud personnel et vous seul y avez accès. Achim Braml n’a aucun accès à vos données iCloud.",
+      h_music: "Accès à Apple Music",
+      p_music: "L’application demande l’accès à votre bibliothèque Apple Music pour créer et gérer des listes de lecture en votre nom. Les recherches dans le catalogue passent par le framework MusicKit d’Apple. L’application ne stocke pas vos identifiants Apple Music — l’authentification est entièrement gérée par Apple.",
+      h_ads: "Publicité",
+      p_ads_1: "La version gratuite de Track Tailor affiche des bannières publicitaires servies par Google AdMob. AdMob peut collecter des identifiants publicitaires et des données d’usage pour personnaliser les annonces, sous réserve de votre consentement à la Transparence du suivi des apps (ATT). Si vous refusez le suivi, des publicités non personnalisées sont affichées. L’abonnement « Supprimer les publicités » désactive toute publicité.",
+      p_ads_2: 'Pour plus de détails sur l’utilisation des données par Google, consultez la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>.',
+      h_subs: "Abonnements",
+      p_subs: "Les abonnements sont traités par Apple via StoreKit. Achim Braml n’a pas accès à vos informations de paiement. Les enregistrements d’achat sont entièrement gérés par Apple.",
+      h_push: "Notifications push",
+      p_push: "L’application peut s’enregistrer pour des notifications push distantes afin de recevoir les signaux de changement CloudKit. Aucun contenu de notification n’est stocké ni transmis en dehors de l’infrastructure Apple.",
+      h_analytics: "Analyses et rapports d’incidents",
+      p_analytics: "L’application n’intègre aucun SDK d’analyse ni de rapport d’incident tiers. Les rapports d’incidents peuvent être collectés par les outils de diagnostic standard d’Apple si vous y avez consenti dans Réglages iOS → Confidentialité → Analyse et améliorations.",
+      h_delete: "Suppression des données",
+      p_delete: "Vous pouvez supprimer toutes les données de l’application à tout moment en la désinstallant. Les données iCloud peuvent être supprimées via Réglages → [votre nom] → iCloud → Gérer le stockage. Aucune donnée n’est conservée sur un serveur externe.",
+      h_children: "Confidentialité des enfants",
+      p_children: "Track Tailor n’est pas destinée aux enfants de moins de 13 ans. L’application ne collecte sciemment aucune donnée de mineurs.",
+      h_changes: "Modifications de cette politique",
+      p_changes: "Toute modification substantielle de cette politique sera publiée à cette URL avec une date révisée. L’usage continu de l’application après une modification vaut acceptation de la politique mise à jour.",
+      h_contact: "Contact",
+      p_contact: 'Questions concernant la confidentialité : <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_terms: "Conditions d’utilisation",
+      link_copyright: "Droits d’auteur",
+      link_home: "Accueil"
+    }
+  };
+
+  function applyLang(lang) {
+    if (!translations[lang]) lang = 'en';
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+    if (t.pageTitle) document.title = t.pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] != null) el.innerHTML = t[key];
+    });
+    const notice = document.querySelector('.lang-notice');
+    if (notice) {
+      if (lang === 'en' || !t.disclaimer) {
+        notice.hidden = true;
+      } else {
+        notice.hidden = false;
+        notice.textContent = t.disclaimer;
+      }
+    }
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang(document.documentElement.dataset.initialLang || 'en');
+</script>
 </body>
 </html>
