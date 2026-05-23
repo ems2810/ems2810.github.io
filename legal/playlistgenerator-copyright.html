@@ -5,51 +5,218 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Copyright — Track Tailor</title>
 <link rel="stylesheet" href="../shared.css">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('lang'); } catch (e) {}
+    var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    var supported = ['en', 'de', 'es', 'fr'];
+    var lang = supported.indexOf(stored) >= 0 ? stored
+             : (supported.indexOf(browser) >= 0 ? browser : 'en');
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.initialLang = lang;
+  })();
+</script>
 </head>
 <body>
 <nav>
   <a href="../index.html" class="nav-back">← Back</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="de">DE</button>
+    <button type="button" data-lang="es">ES</button>
+    <button type="button" data-lang="fr">FR</button>
+  </div>
 </nav>
 
 <main class="page">
   <p class="page-eyebrow">Track Tailor</p>
-  <h1>Copyright</h1>
-  <p class="page-meta">Last updated: April 2026</p>
+  <h1 data-i18n="title">Copyright</h1>
+  <p class="page-meta" data-i18n="meta">Last updated: May 2026</p>
+  <p class="lang-notice" data-i18n="disclaimer" hidden></p>
 
-  <h2>Application</h2>
-  <p>Track Tailor © 2024–2026 Achim Braml. All rights reserved.</p>
-  <p>The app, its source code, design, graphics, and all related assets are the exclusive property of Achim Braml and are protected by copyright law. Reproduction, redistribution, or modification of any part of the app without prior written permission is prohibited.</p>
+  <h2 data-i18n="h_app">Application</h2>
+  <p data-i18n="p_app_1">Track Tailor © 2024–2026 Achim Braml. All rights reserved.</p>
+  <p data-i18n="p_app_2">The app, its source code, design, graphics, and all related assets are the exclusive property of Achim Braml and are protected by copyright law. Reproduction, redistribution, or modification of any part of the app without prior written permission is prohibited.</p>
 
-  <h2>Music content</h2>
-  <p>All music, artwork, track titles, artist names, and album information displayed within Track Tailor are the property of their respective rights holders. Track Tailor accesses this content through Apple's MusicKit API under license from Apple Inc. The app does not host, store, or reproduce any copyrighted music or cover art.</p>
+  <h2 data-i18n="h_music">Music content</h2>
+  <p data-i18n="p_music">All music, artwork, track titles, artist names, and album information displayed within Track Tailor are the property of their respective rights holders. Track Tailor accesses this content through Apple's MusicKit API under license from Apple Inc. The app does not host, store, or reproduce any copyrighted music or cover art.</p>
 
-  <h2>Third-party frameworks and services</h2>
-  <p>Track Tailor makes use of the following third-party technologies:</p>
+  <h2 data-i18n="h_third">Third-party frameworks and services</h2>
+  <p data-i18n="p_third">Track Tailor makes use of the following third-party technologies:</p>
   <ul>
-    <li><strong>Apple MusicKit</strong> — Apple Inc. Usage subject to Apple's MusicKit Terms of Service.</li>
-    <li><strong>Apple CloudKit</strong> — Apple Inc. Data sync infrastructure.</li>
-    <li><strong>StoreKit 2</strong> — Apple Inc. In-app purchase framework.</li>
-    <li><strong>Google Mobile Ads SDK (AdMob)</strong> — Google LLC. Banner advertising. Usage subject to Google's Terms of Service.</li>
-    <li><strong>Spotify Web API</strong> — Spotify AB. Used for genre-to-artist resolution. Usage subject to Spotify's Developer Terms of Service.</li>
-    <li><strong>Last.fm API</strong> — Audioscrobbler Ltd. Used for genre-to-artist resolution. Usage subject to Last.fm API Terms of Use.</li>
-    <li><strong>MusicBrainz API</strong> — MetaBrainz Foundation. Used for genre-to-artist resolution. Open data, CC0 licensed metadata.</li>
-    <li><strong>Discogs API</strong> — Zink Media LLC. Used for genre-to-artist resolution. Usage subject to Discogs API Terms.</li>
+    <li data-i18n="li_musickit"><strong>Apple MusicKit</strong> — Apple Inc. Usage subject to Apple's MusicKit Terms of Service.</li>
+    <li data-i18n="li_cloudkit"><strong>Apple CloudKit</strong> — Apple Inc. Data sync infrastructure.</li>
+    <li data-i18n="li_storekit"><strong>StoreKit 2</strong> — Apple Inc. In-app purchase framework.</li>
+    <li data-i18n="li_admob"><strong>Google Mobile Ads SDK (AdMob)</strong> — Google LLC. Banner advertising. Usage subject to Google's Terms of Service.</li>
+    <li data-i18n="li_spotify"><strong>Spotify Web API</strong> — Spotify AB. Used for genre-to-artist resolution. Usage subject to Spotify's Developer Terms of Service.</li>
+    <li data-i18n="li_lastfm"><strong>Last.fm API</strong> — Audioscrobbler Ltd. Used for genre-to-artist resolution. Usage subject to Last.fm API Terms of Use.</li>
+    <li data-i18n="li_mb"><strong>MusicBrainz API</strong> — MetaBrainz Foundation. Used for genre-to-artist resolution. Open data, CC0 licensed metadata.</li>
+    <li data-i18n="li_discogs"><strong>Discogs API</strong> — Zink Media LLC. Used for genre-to-artist resolution. Usage subject to Discogs API Terms.</li>
   </ul>
 
-  <h2>Trademarks</h2>
-  <p>Apple, Apple Music, iPhone, iPad, iCloud, MusicKit, StoreKit, and CloudKit are trademarks of Apple Inc., registered in the U.S. and other countries. Google and AdMob are trademarks of Google LLC. Spotify is a trademark of Spotify AB. These trademarks are referenced solely for identification purposes and do not imply endorsement.</p>
+  <h2 data-i18n="h_trademarks">Trademarks</h2>
+  <p data-i18n="p_trademarks">Apple, Apple Music, iPhone, iPad, iCloud, MusicKit, StoreKit, and CloudKit are trademarks of Apple Inc., registered in the U.S. and other countries. Google and AdMob are trademarks of Google LLC. Spotify is a trademark of Spotify AB. These trademarks are referenced solely for identification purposes and do not imply endorsement.</p>
 
-  <h2>Contact</h2>
-  <p>For copyright inquiries: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
+  <h2 data-i18n="h_contact">Contact</h2>
+  <p data-i18n="p_contact">For copyright inquiries: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a></p>
 </main>
 
 <footer>
-  <span class="footer-name">Achim Braml</span>
+  <span class="footer-name">© Achim Braml</span>
   <ul class="footer-links">
-    <li><a href="playlistgenerator-privacy.html">Privacy Policy</a></li>
-    <li><a href="playlistgenerator-terms.html">Terms of Use</a></li>
-    <li><a href="../index.html">Home</a></li>
+    <li><a href="playlistgenerator-privacy.html" data-i18n="link_privacy">Privacy Policy</a></li>
+    <li><a href="playlistgenerator-terms.html" data-i18n="link_terms">Terms of Use</a></li>
+    <li><a href="../index.html" data-i18n="link_home">Home</a></li>
   </ul>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      pageTitle: "Copyright — Track Tailor",
+      title: "Copyright",
+      meta: "Last updated: May 2026",
+      h_app: "Application",
+      p_app_1: "Track Tailor © 2024–2026 Achim Braml. All rights reserved.",
+      p_app_2: "The app, its source code, design, graphics, and all related assets are the exclusive property of Achim Braml and are protected by copyright law. Reproduction, redistribution, or modification of any part of the app without prior written permission is prohibited.",
+      h_music: "Music content",
+      p_music: "All music, artwork, track titles, artist names, and album information displayed within Track Tailor are the property of their respective rights holders. Track Tailor accesses this content through Apple’s MusicKit API under license from Apple Inc. The app does not host, store, or reproduce any copyrighted music or cover art.",
+      h_third: "Third-party frameworks and services",
+      p_third: "Track Tailor makes use of the following third-party technologies:",
+      li_musickit: "<strong>Apple MusicKit</strong> — Apple Inc. Usage subject to Apple’s MusicKit Terms of Service.",
+      li_cloudkit: "<strong>Apple CloudKit</strong> — Apple Inc. Data sync infrastructure.",
+      li_storekit: "<strong>StoreKit 2</strong> — Apple Inc. In-app purchase framework.",
+      li_admob: "<strong>Google Mobile Ads SDK (AdMob)</strong> — Google LLC. Banner advertising. Usage subject to Google’s Terms of Service.",
+      li_spotify: "<strong>Spotify Web API</strong> — Spotify AB. Used for genre-to-artist resolution. Usage subject to Spotify’s Developer Terms of Service.",
+      li_lastfm: "<strong>Last.fm API</strong> — Audioscrobbler Ltd. Used for genre-to-artist resolution. Usage subject to Last.fm API Terms of Use.",
+      li_mb: "<strong>MusicBrainz API</strong> — MetaBrainz Foundation. Used for genre-to-artist resolution. Open data, CC0 licensed metadata.",
+      li_discogs: "<strong>Discogs API</strong> — Zink Media LLC. Used for genre-to-artist resolution. Usage subject to Discogs API Terms.",
+      h_trademarks: "Trademarks",
+      p_trademarks: "Apple, Apple Music, iPhone, iPad, iCloud, MusicKit, StoreKit, and CloudKit are trademarks of Apple Inc., registered in the U.S. and other countries. Google and AdMob are trademarks of Google LLC. Spotify is a trademark of Spotify AB. These trademarks are referenced solely for identification purposes and do not imply endorsement.",
+      h_contact: "Contact",
+      p_contact: 'For copyright inquiries: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Use",
+      link_home: "Home"
+    },
+    de: {
+      pageTitle: "Urheberrecht — Track Tailor",
+      title: "Urheberrecht",
+      meta: "Letzte Aktualisierung: Mai 2026",
+      disclaimer: "Diese Übersetzung dient nur der Bequemlichkeit — maßgeblich ist die englische Fassung.",
+      h_app: "Anwendung",
+      p_app_1: "Track Tailor © 2024–2026 Achim Braml. Alle Rechte vorbehalten.",
+      p_app_2: "Die App, ihr Quellcode, Design, ihre Grafiken sowie alle zugehörigen Inhalte sind ausschließliches Eigentum von Achim Braml und urheberrechtlich geschützt. Die Vervielfältigung, Weiterverbreitung oder Bearbeitung von Teilen der App ohne vorherige schriftliche Zustimmung ist untersagt.",
+      h_music: "Musikinhalte",
+      p_music: "Sämtliche Musik, Coverbilder, Titelnamen, Künstlernamen und Albuminformationen, die in Track Tailor angezeigt werden, sind Eigentum der jeweiligen Rechteinhaber. Track Tailor greift auf diese Inhalte über die MusicKit-API von Apple Inc. unter Lizenz zu. Die App hostet, speichert oder reproduziert keine urheberrechtlich geschützten Musik- oder Cover-Inhalte.",
+      h_third: "Drittanbieter-Frameworks und Dienste",
+      p_third: "Track Tailor verwendet die folgenden Technologien von Drittanbietern:",
+      li_musickit: "<strong>Apple MusicKit</strong> — Apple Inc. Nutzung unterliegt den MusicKit-Nutzungsbedingungen von Apple.",
+      li_cloudkit: "<strong>Apple CloudKit</strong> — Apple Inc. Infrastruktur für Datensynchronisation.",
+      li_storekit: "<strong>StoreKit 2</strong> — Apple Inc. Framework für In-App-Käufe.",
+      li_admob: "<strong>Google Mobile Ads SDK (AdMob)</strong> — Google LLC. Bannerwerbung. Nutzung unterliegt den Google-Nutzungsbedingungen.",
+      li_spotify: "<strong>Spotify Web API</strong> — Spotify AB. Eingesetzt zur Genre-zu-Künstler-Auflösung. Nutzung unterliegt den Spotify Developer Terms of Service.",
+      li_lastfm: "<strong>Last.fm API</strong> — Audioscrobbler Ltd. Eingesetzt zur Genre-zu-Künstler-Auflösung. Nutzung unterliegt den Last.fm-API-Nutzungsbedingungen.",
+      li_mb: "<strong>MusicBrainz API</strong> — MetaBrainz Foundation. Eingesetzt zur Genre-zu-Künstler-Auflösung. Offene Daten, Metadaten unter CC0-Lizenz.",
+      li_discogs: "<strong>Discogs API</strong> — Zink Media LLC. Eingesetzt zur Genre-zu-Künstler-Auflösung. Nutzung unterliegt den Discogs-API-Bedingungen.",
+      h_trademarks: "Marken",
+      p_trademarks: "Apple, Apple Music, iPhone, iPad, iCloud, MusicKit, StoreKit und CloudKit sind Marken der Apple Inc., eingetragen in den USA und anderen Ländern. Google und AdMob sind Marken der Google LLC. Spotify ist eine Marke der Spotify AB. Die Marken werden ausschließlich zu Identifikationszwecken genannt und implizieren keine Befürwortung.",
+      h_contact: "Kontakt",
+      p_contact: 'Anfragen zum Urheberrecht: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      link_home: "Startseite"
+    },
+    es: {
+      pageTitle: "Derechos de autor — Track Tailor",
+      title: "Derechos de autor",
+      meta: "Última actualización: mayo de 2026",
+      disclaimer: "Traducción ofrecida por comodidad — la versión en inglés es la vinculante.",
+      h_app: "Aplicación",
+      p_app_1: "Track Tailor © 2024–2026 Achim Braml. Todos los derechos reservados.",
+      p_app_2: "La aplicación, su código fuente, diseño, gráficos y todos los activos relacionados son propiedad exclusiva de Achim Braml y están protegidos por la legislación de derechos de autor. Queda prohibida la reproducción, redistribución o modificación de cualquier parte de la aplicación sin permiso previo por escrito.",
+      h_music: "Contenido musical",
+      p_music: "Toda la música, las portadas, los títulos, los nombres de los artistas y la información de los álbumes mostrados dentro de Track Tailor son propiedad de sus respectivos titulares de derechos. Track Tailor accede a este contenido a través de la API MusicKit de Apple bajo licencia de Apple Inc. La aplicación no aloja, almacena ni reproduce música ni portadas con derechos de autor.",
+      h_third: "Frameworks y servicios de terceros",
+      p_third: "Track Tailor utiliza las siguientes tecnologías de terceros:",
+      li_musickit: "<strong>Apple MusicKit</strong> — Apple Inc. Uso sujeto a las Condiciones del servicio de MusicKit de Apple.",
+      li_cloudkit: "<strong>Apple CloudKit</strong> — Apple Inc. Infraestructura de sincronización de datos.",
+      li_storekit: "<strong>StoreKit 2</strong> — Apple Inc. Framework para compras dentro de la aplicación.",
+      li_admob: "<strong>Google Mobile Ads SDK (AdMob)</strong> — Google LLC. Publicidad en banners. Uso sujeto a las Condiciones del servicio de Google.",
+      li_spotify: "<strong>Spotify Web API</strong> — Spotify AB. Utilizada para la resolución de géneros a artistas. Uso sujeto a las Condiciones del servicio para desarrolladores de Spotify.",
+      li_lastfm: "<strong>Last.fm API</strong> — Audioscrobbler Ltd. Utilizada para la resolución de géneros a artistas. Uso sujeto a las Condiciones de uso de la API de Last.fm.",
+      li_mb: "<strong>MusicBrainz API</strong> — MetaBrainz Foundation. Utilizada para la resolución de géneros a artistas. Datos abiertos, metadatos bajo licencia CC0.",
+      li_discogs: "<strong>Discogs API</strong> — Zink Media LLC. Utilizada para la resolución de géneros a artistas. Uso sujeto a las Condiciones de la API de Discogs.",
+      h_trademarks: "Marcas comerciales",
+      p_trademarks: "Apple, Apple Music, iPhone, iPad, iCloud, MusicKit, StoreKit y CloudKit son marcas comerciales de Apple Inc., registradas en EE. UU. y otros países. Google y AdMob son marcas comerciales de Google LLC. Spotify es una marca comercial de Spotify AB. Estas marcas se mencionan únicamente con fines identificativos y no implican respaldo.",
+      h_contact: "Contacto",
+      p_contact: 'Consultas sobre derechos de autor: <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Política de privacidad",
+      link_terms: "Condiciones de uso",
+      link_home: "Inicio"
+    },
+    fr: {
+      pageTitle: "Droits d’auteur — Track Tailor",
+      title: "Droits d’auteur",
+      meta: "Dernière mise à jour : mai 2026",
+      disclaimer: "Traduction fournie à titre indicatif — la version anglaise fait foi.",
+      h_app: "Application",
+      p_app_1: "Track Tailor © 2024–2026 Achim Braml. Tous droits réservés.",
+      p_app_2: "L’application, son code source, sa conception, ses graphismes et tous les éléments associés sont la propriété exclusive d’Achim Braml et sont protégés par le droit d’auteur. Toute reproduction, redistribution ou modification d’une partie quelconque de l’application sans autorisation écrite préalable est interdite.",
+      h_music: "Contenu musical",
+      p_music: "Toutes les musiques, pochettes, titres de morceaux, noms d’artistes et informations d’album affichés dans Track Tailor sont la propriété de leurs ayants droit respectifs. Track Tailor accède à ces contenus via l’API MusicKit d’Apple sous licence d’Apple Inc. L’application n’héberge, ne stocke ni ne reproduit aucune musique ni pochette protégée par le droit d’auteur.",
+      h_third: "Frameworks et services tiers",
+      p_third: "Track Tailor utilise les technologies tierces suivantes :",
+      li_musickit: "<strong>Apple MusicKit</strong> — Apple Inc. Utilisation soumise aux conditions de service MusicKit d’Apple.",
+      li_cloudkit: "<strong>Apple CloudKit</strong> — Apple Inc. Infrastructure de synchronisation des données.",
+      li_storekit: "<strong>StoreKit 2</strong> — Apple Inc. Framework pour les achats intégrés.",
+      li_admob: "<strong>Google Mobile Ads SDK (AdMob)</strong> — Google LLC. Publicité en bannière. Utilisation soumise aux conditions de service de Google.",
+      li_spotify: "<strong>Spotify Web API</strong> — Spotify AB. Utilisée pour la résolution genre-artiste. Utilisation soumise aux Spotify Developer Terms of Service.",
+      li_lastfm: "<strong>Last.fm API</strong> — Audioscrobbler Ltd. Utilisée pour la résolution genre-artiste. Utilisation soumise aux conditions d’utilisation de l’API Last.fm.",
+      li_mb: "<strong>MusicBrainz API</strong> — MetaBrainz Foundation. Utilisée pour la résolution genre-artiste. Données ouvertes, métadonnées sous licence CC0.",
+      li_discogs: "<strong>Discogs API</strong> — Zink Media LLC. Utilisée pour la résolution genre-artiste. Utilisation soumise aux conditions de l’API Discogs.",
+      h_trademarks: "Marques",
+      p_trademarks: "Apple, Apple Music, iPhone, iPad, iCloud, MusicKit, StoreKit et CloudKit sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays. Google et AdMob sont des marques de Google LLC. Spotify est une marque de Spotify AB. Ces marques sont mentionnées uniquement à des fins d’identification et n’impliquent aucune approbation.",
+      h_contact: "Contact",
+      p_contact: 'Demandes relatives aux droits d’auteur : <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a>',
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d’utilisation",
+      link_home: "Accueil"
+    }
+  };
+
+  function applyLang(lang) {
+    if (!translations[lang]) lang = 'en';
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+    if (t.pageTitle) document.title = t.pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] != null) el.innerHTML = t[key];
+    });
+    const notice = document.querySelector('.lang-notice');
+    if (notice) {
+      if (lang === 'en' || !t.disclaimer) {
+        notice.hidden = true;
+      } else {
+        notice.hidden = false;
+        notice.textContent = t.disclaimer;
+      }
+    }
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang(document.documentElement.dataset.initialLang || 'en');
+</script>
 </body>
 </html>

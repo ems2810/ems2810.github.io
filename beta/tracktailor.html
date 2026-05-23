@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta — Track Tailor</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .beta-hero {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .beta-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .beta-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .waitlist-form {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .waitlist-form h2 { margin-top: 0; margin-bottom: 0.6rem; }
+  .waitlist-form p { margin-bottom: 1.5rem; }
+  .feature-list { list-style: none; margin-left: 0; padding-left: 0; }
+  .feature-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feat-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+
+  <div class="beta-hero">
+    <div class="beta-icon">
+      <img src="../icons/tracktailor.png" alt="Track Tailor app icon" width="56" height="56">
+    </div>
+    <div>
+      <p class="page-eyebrow" style="margin-bottom:0.25rem;">Track Tailor</p>
+      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Beta</h1>
+    </div>
+  </div>
+
+  <p style="font-size:1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.5rem;">
+    Track Tailor is live on the App Store. A new version is currently in testing on TestFlight with up to 100 tester slots — try the latest improvements before they ship to the public release.
+  </p>
+
+  <div class="waitlist-form">
+    <h2>Join the beta on TestFlight</h2>
+    <p>Tap the button below to join the Track Tailor beta via TestFlight. You'll need the free TestFlight app installed on your iPhone or iPad.</p>
+    <a href="https://testflight.apple.com/join/EYUFyc9k" class="tf-button">Open in TestFlight →</a>
+    <p class="tf-note">TestFlight is Apple's free beta testing platform. The beta may contain bugs — please report them via the TestFlight feedback button or by email.</p>
+  </div>
+
+  <h2>What's in Track Tailor</h2>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span>Dynamic Apple Music playlists that update themselves based on your filter rules</span></li>
+    <li><span class="feat-dot"></span><span>Filter by artists, genres, title keywords, and date ranges (last N days, specific year, all-time)</span></li>
+    <li><span class="feat-dot"></span><span>Genre resolution via Spotify, Last.fm, MusicBrainz, and Discogs — type a genre, get the matching artists</span></li>
+    <li><span class="feat-dot"></span><span>Background sync keeps playlists fresh even when the app isn't open</span></li>
+    <li><span class="feat-dot"></span><span>iCloud sync so playlist configurations follow you across iPhone and iPad</span></li>
+    <li><span class="feat-dot"></span><span>Optional Remove Ads subscription</span></li>
+  </ul>
+
+  <h2>Requirements</h2>
+  <p>Track Tailor requires iOS 17 or later and an active Apple Music subscription.</p>
+
+  <h2>Feedback</h2>
+  <p>The fastest way to send feedback is the TestFlight feedback button (long-press the app icon or use the TestFlight app). You can also email <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a> — include your iOS version, the app build number (Settings → About), and steps to reproduce.</p>
+
+</main>
+
+<footer>
+  <span class="footer-name">© Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/playlistgenerator-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/playlistgenerator-terms.html">Terms of Use</a></li>
+    <li><a href="../apps/playlistgenerator-support.html">Support</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
