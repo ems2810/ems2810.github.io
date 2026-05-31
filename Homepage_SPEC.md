@@ -1,5 +1,5 @@
 # ems2810.github.io — Homepage Specification
-**Version 1.5 — May 23, 2026**
+**Version 1.6 — May 31, 2026**
 
 ---
 
@@ -72,13 +72,14 @@ ems2810.github.io/
 ### 3.2 Sketchline
 | | |
 |---|---|
-| **Status** | 🧪 TestFlight Beta |
-| **TestFlight** | https://testflight.apple.com/join/WyqxGCUU (100 slots) |
+| **Status** | ✅ Live on App Store |
+| **App Store** | https://apps.apple.com/us/app/sketchline/id6762081024 |
+| **TestFlight** | https://testflight.apple.com/join/WyqxGCUU (100 slots) — no longer linked from homepage |
 | **Platform** | iPad only (iPadOS 17.0+) |
 | **Description** | Natural drawing app for iPad with full Apple Pencil support |
 | **Legal hosting** | `legal/sketchline-privacy.html`, `sketchline-terms.html`; copyright + support pages missing (to be created) |
-| **Beta page** | `beta/sketchline.html` |
-| **CTA on homepage** | "Join Beta" button → TestFlight link |
+| **Beta page** | `beta/sketchline.html` — exists but unlinked (reachable only by direct URL) |
+| **CTA on homepage** | "Download on the App Store" badge + Support link; `Live` badge; no TestFlight/"About the beta" link |
 
 **App icon:** `icons/sketchline.png`
 
@@ -208,6 +209,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 | 1.3 | 2026-05-09 | Backlog §9 umgesetzt: Kontrast-Fix (`--ink-faint` → `#6c6c6c`), Cards entrümpelt (Privacy/Terms/Copyright als kleine Legal-Zeile), `.btn-primary` für alle primären CTAs, Folio-Home Notify-Affordance, Early-Access-Sektion entfernt + Nav-Beta auf `beta/sketchline.html`, CSS-Duplikation aufgelöst (shared.css verlinkt), `:focus-visible` + `prefers-reduced-motion`, Hero-Em auf `--purple`, App-Sub ohne Italic, Brand-Mark ausgeschrieben |
 | 1.4 | 2026-05-13 | Design-Refresh: System-Font-Stack statt DM Serif/DM Sans (keine externen Webfonts mehr), weißer Hintergrund statt warmes Beige, **ein** Akzent (Purple) — Green-Tokens und Purple-Light entfernt. „Achim Braml" Nav-Brand auf allen Seiten entfernt; Name nur noch im Footer. Sketchline `privacy` + `terms`: 4-Sprachen-Switcher (EN/DE/ES/FR) mit Auto-Erkennung via `navigator.language`, `localStorage`-Persistenz und Disclaimer für nicht-englische Versionen. |
 | 1.5 | 2026-05-23 | Track Tailor bekommt parallel zum App Store einen TestFlight-CTA: schwarzer TestFlight-Pill-Button in der Card (gleiche `.btn-testflight`-Form wie Sketchline), zusätzliches `.badge-beta` neben dem `Live`-Badge, `app-tech`-Zeile „iOS · A new build is in TestFlight · 100 tester slots", neuer `beta/tracktailor.html` nach Sketchline-Muster. Alle vier Track-Tailor-Seiten (`legal/playlistgenerator-privacy.html`, `playlistgenerator-terms.html`, `playlistgenerator-copyright.html`, `apps/playlistgenerator-support.html`) auf 4-Sprachen-Switcher (EN/DE/ES/FR) umgestellt — DE/ES/FR voll übersetzt, EN bleibt authoritativ. |
+| 1.6 | 2026-05-31 | Sketchline live auf dem App Store (id6762081024): TestFlight-Pill in der Card durch „Download on the App Store"-Badge ersetzt, Badge von `.badge-beta` auf `Live` (grau), „100 tester slots" aus `app-tech` entfernt, „About the beta"-Link sowie der „Beta"-Nav-Eintrag (→ `beta/sketchline.html`) entfernt. Beta-Seite bleibt bestehen, ist aber nicht mehr verlinkt. |
 
 ---
 
