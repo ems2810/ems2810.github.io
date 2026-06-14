@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — Track Tailor</title>
+<meta name="description" content="Release notes for Track Tailor — everything that changed, version by version.">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ---- Changelog-specific rules only. Shared rules live in shared.css. ---- */
+
+  .changelog-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .changelog-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .changelog-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .changelog-intro {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* One <article> per release */
+  .release {
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .release:first-of-type {
+    padding-top: 2.25rem;
+    margin-top: 0;
+    border-top: none;
+  }
+
+  .release-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  /* Reuse shared .page h2 sizing; just tidy the spacing inside a release */
+  .release-head h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .release-build {
+    font-size: 0.875rem;
+    color: var(--ink-faint);
+  }
+  .release-date {
+    font-size: 0.875rem;
+    color: var(--ink-faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .release-date[data-todo] { color: var(--accent); font-weight: 500; }
+
+  .release-theme {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Group sub-headings: New / Improved / Fixed / Known limitations */
+  .change-group {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .change-list {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .change-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.65;
+  }
+  .change-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  /* "Known limitations" reads as caveats, not features — calmer marker */
+  .change-list.limitations li::before { background: var(--ink-faint); }
+  .change-list li strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 540px) {
+    .release-date { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page changelog">
+
+  <div class="changelog-hero">
+    <div class="changelog-icon">
+      <img src="icons/tracktailor.png" alt="Track Tailor app icon" width="56" height="56">
+    </div>
+    <div>
+      <p class="page-eyebrow" style="margin-bottom:0.25rem;">Track Tailor</p>
+      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Changelog</h1>
+    </div>
+  </div>
+
+  <p class="changelog-intro">Everything that changed, version by version. Newest releases are at the top.</p>
+
+  <!-- ===== 1.1.4 ===== -->
+  <article class="release">
+    <div class="release-head">
+      <h2>Version 1.1.4</h2>
+      <span class="release-build">Build 94</span>
+      <!-- TODO: replace with the real 1.1.4 release date, e.g. <time datetime="2026-06-09">June 9, 2026</time> -->
+      <span class="release-date" data-todo>Release date: TODO</span>
+    </div>
+    <p class="release-theme">Localization plus a much smarter genre engine.</p>
+
+    <h3 class="change-group">New</h3>
+    <ul class="change-list">
+      <li>Full localization — the app is now available in German, French, and Spanish in addition to English.</li>
+    </ul>
+
+    <h3 class="change-group">Improved</h3>
+    <ul class="change-list">
+      <li><strong>More accurate genre search.</strong> Artists are now matched by confirmed Apple Music IDs instead of by name. Previously a same-named artist from a completely different genre could slip into a playlist — for example, a niche hardcore act colliding with a famous pop or electronic act of the same name. Each artist is now resolved to a verified Apple Music ID, so the right one is matched. In benchmark testing, on-genre accuracy across decided tracks rose from about 81% to about 98% — and from about 60% to 100% for hardcore specifically.</li>
+      <li><strong>Daily genre refresh.</strong> Genre lists now update every day, so newly added artists and genres show up faster.</li>
+      <li><strong>Reproducible "last N days" windows.</strong> Release-radar-style playlists (7 / 30 / 90 days) now produce consistent, repeatable results.</li>
+      <li><strong>Faster sync</strong> overall.</li>
+      <li><strong>Cleaned-up settings screen.</strong></li>
+      <li><strong>Easier suggestions.</strong> The "suggest an artist or genre" email now includes a direct Apple Music link, so suggestions are quicker to act on.</li>
+    </ul>
+
+    <h3 class="change-group">Fixed</h3>
+    <ul class="change-list">
+      <li>Interrupted background syncs now resume reliably when you reopen the app, instead of stalling or starting over.</li>
+      <li>Cancelling a sync now stops progress immediately.</li>
+      <li>The ad banner clears right after you subscribe and no longer flashes briefly on launch for subscribers.</li>
+      <li>The Lock Screen / Dynamic Island Live Activity now resumes correctly when the app is closed mid-sync, and no longer shows a false "sync interrupted" warning.</li>
+      <li>The "sync complete" notification no longer pops up over a screen you're already working in.</li>
+      <li>Corrected track counts that could drift on the overview screen.</li>
+      <li>Some genre searches that previously returned no tracks (for example, certain hardcore and Frenchcore styles) now return the right results.</li>
+    </ul>
+
+    <h3 class="change-group">Known limitations</h3>
+    <ul class="change-list limitations">
+      <li>Search is artist-based; searching by track title is not yet supported.</li>
+      <li>The app manages only playlists it created; it does not edit your existing Apple Music playlists.</li>
+      <li>Background sync is most reliable with the app open and the screen active — battery optimization can end long background runs early on large artist lists.</li>
+      <li>Niche, regional, or very new genres may not always be found.</li>
+    </ul>
+  </article>
+
+  <!-- ===== 1.0.0 ===== -->
+  <article class="release">
+    <div class="release-head">
+      <h2>Version 1.0.0</h2>
+      <span class="release-build">Build 86</span>
+      <time class="release-date" datetime="2026-04-21">April 21, 2026</time>
+    </div>
+    <p class="release-theme">Initial release.</p>
+
+    <h3 class="change-group">New</h3>
+    <ul class="change-list">
+      <li>Create Apple Music playlists from rules: filter by genre, artist, date range, or title keywords.</li>
+      <li>Include and exclude rules.</li>
+      <li>Time windows: All Time, a specific year, or a rolling window (7 / 30 / 90 days).</li>
+      <li>Caps on total tracks and on per-artist track counts.</li>
+      <li>Shuffle or chronological sort.</li>
+      <li>Multiple independent playlists, each with its own rules.</li>
+      <li>iCloud sync across devices.</li>
+      <li>Background sync with completion notifications.</li>
+      <li>Built-in curated list of about 70 genres with hand-picked artists (works offline, no account); MusicBrainz fallback for genres outside the list.</li>
+      <li>Free with a small banner ad; a subscription (monthly or yearly) removes ads.</li>
+    </ul>
+  </article>
+
+</main>
+
+<footer>
+  <span class="footer-name">© Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="beta/tracktailor.html">Beta</a></li>
+    <li><a href="apps/playlistgenerator-support.html">Support</a></li>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

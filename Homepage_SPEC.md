@@ -1,5 +1,5 @@
 # ems2810.github.io — Homepage Specification
-**Version 1.6 — May 31, 2026**
+**Version 1.7 — June 14, 2026**
 
 ---
 
@@ -20,6 +20,7 @@
 ```
 ems2810.github.io/
 ├── index.html                          — Homepage (app overview)
+├── changelog.html                      — Track Tailor release notes (version by version)
 ├── shared.css                          — Global stylesheet
 ├── app-ads.txt                         — AdMob verification
 ├── icons/                              — App icon PNGs (not inline SVGs)
@@ -65,7 +66,8 @@ ems2810.github.io/
 | **Description** | Dynamic Apple Music playlist generator |
 | **Legal hosting** | Privacy Policy + Copyright → `legal/playlistgenerator-privacy.html` / `playlistgenerator-copyright.html`; Terms → `playlistgenerator-terms.html`; Support → `apps/playlistgenerator-support.html` |
 | **Beta page** | `beta/tracktailor.html` |
-| **CTA on homepage** | "Download on the App Store" badge + black TestFlight pill ("Join the Beta on TestFlight") + "About the beta" link |
+| **Changelog** | `changelog.html` — reverse-chronological release notes (New / Improved / Fixed / Known limitations per version) |
+| **CTA on homepage** | "Download on the App Store" badge + black TestFlight pill ("Join the Beta on TestFlight") + "About the beta" link + "Changelog" link |
 
 **App icon:** `icons/tracktailor.png`
 
@@ -210,6 +212,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 | 1.4 | 2026-05-13 | Design-Refresh: System-Font-Stack statt DM Serif/DM Sans (keine externen Webfonts mehr), weißer Hintergrund statt warmes Beige, **ein** Akzent (Purple) — Green-Tokens und Purple-Light entfernt. „Achim Braml" Nav-Brand auf allen Seiten entfernt; Name nur noch im Footer. Sketchline `privacy` + `terms`: 4-Sprachen-Switcher (EN/DE/ES/FR) mit Auto-Erkennung via `navigator.language`, `localStorage`-Persistenz und Disclaimer für nicht-englische Versionen. |
 | 1.5 | 2026-05-23 | Track Tailor bekommt parallel zum App Store einen TestFlight-CTA: schwarzer TestFlight-Pill-Button in der Card (gleiche `.btn-testflight`-Form wie Sketchline), zusätzliches `.badge-beta` neben dem `Live`-Badge, `app-tech`-Zeile „iOS · A new build is in TestFlight · 100 tester slots", neuer `beta/tracktailor.html` nach Sketchline-Muster. Alle vier Track-Tailor-Seiten (`legal/playlistgenerator-privacy.html`, `playlistgenerator-terms.html`, `playlistgenerator-copyright.html`, `apps/playlistgenerator-support.html`) auf 4-Sprachen-Switcher (EN/DE/ES/FR) umgestellt — DE/ES/FR voll übersetzt, EN bleibt authoritativ. |
 | 1.6 | 2026-05-31 | Sketchline live auf dem App Store (id6762081024): TestFlight-Pill in der Card durch „Download on the App Store"-Badge ersetzt, Badge von `.badge-beta` auf `Live` (grau), „100 tester slots" aus `app-tech` entfernt, „About the beta"-Link sowie der „Beta"-Nav-Eintrag (→ `beta/sketchline.html`) entfernt. Beta-Seite bleibt bestehen, ist aber nicht mehr verlinkt. |
+| 1.7 | 2026-06-14 | Neue `changelog.html` (Track-Tailor-Release-Notes, reverse-chronologisch, Gruppen New/Improved/Fixed/Known limitations, `<article>`/`<time>`-Semantik) nach Muster der Subseiten gebaut — nutzt `shared.css`, nur seitenspezifische Regeln im `<style>`-Block. Von der Track-Tailor-Card aus als „Changelog"-`.app-link` verlinkt. Enthält 1.1.4 (Build 94, Release-Datum noch offen) und 1.0.0 (Build 86). |
 
 ---
 
@@ -271,4 +274,4 @@ Mehrsprachige Seiten (Stand v1.5):
 ---
 
 *Homepage Spec — ems2810.github.io*
-*Last updated: May 23, 2026*
+*Last updated: June 14, 2026*
