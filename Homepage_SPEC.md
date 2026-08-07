@@ -59,15 +59,15 @@ ems2810.github.io/
 ### 3.1 Track Tailor
 | | |
 |---|---|
-| **Status** | ✅ Live on App Store · 🧪 New build in TestFlight |
+| **Status** | ✅ Live on App Store |
 | **Internal name** | `playlistgenerator` (used in all filenames) |
 | **App Store** | https://apps.apple.com/us/app/track-tailor/id6761209212 |
-| **TestFlight** | https://testflight.apple.com/join/EYUFyc9k (100 slots) |
+| **TestFlight** | https://testflight.apple.com/join/EYUFyc9k (100 slots) — no longer linked from homepage |
 | **Description** | Dynamic Apple Music playlist generator |
 | **Legal hosting** | Privacy Policy + Copyright → `legal/playlistgenerator-privacy.html` / `playlistgenerator-copyright.html`; Terms → `playlistgenerator-terms.html`; Support → `apps/playlistgenerator-support.html` |
-| **Beta page** | `beta/tracktailor.html` |
+| **Beta page** | `beta/tracktailor.html` — exists but unlinked (reachable only by direct URL) |
 | **Changelog** | `changelog.html` — reverse-chronological release notes (New / Improved / Fixed / Known limitations per version) |
-| **CTA on homepage** | "Download on the App Store" badge + black TestFlight pill ("Join the Beta on TestFlight") + "About the beta" link + "Changelog" link |
+| **CTA on homepage** | "Download on the App Store" badge + "Changelog" link + "Support" link; `Live` badge; no TestFlight/"About the beta" link |
 
 **App icon:** `icons/tracktailor.png`
 
@@ -213,6 +213,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 | 1.5 | 2026-05-23 | Track Tailor bekommt parallel zum App Store einen TestFlight-CTA: schwarzer TestFlight-Pill-Button in der Card (gleiche `.btn-testflight`-Form wie Sketchline), zusätzliches `.badge-beta` neben dem `Live`-Badge, `app-tech`-Zeile „iOS · A new build is in TestFlight · 100 tester slots", neuer `beta/tracktailor.html` nach Sketchline-Muster. Alle vier Track-Tailor-Seiten (`legal/playlistgenerator-privacy.html`, `playlistgenerator-terms.html`, `playlistgenerator-copyright.html`, `apps/playlistgenerator-support.html`) auf 4-Sprachen-Switcher (EN/DE/ES/FR) umgestellt — DE/ES/FR voll übersetzt, EN bleibt authoritativ. |
 | 1.6 | 2026-05-31 | Sketchline live auf dem App Store (id6762081024): TestFlight-Pill in der Card durch „Download on the App Store"-Badge ersetzt, Badge von `.badge-beta` auf `Live` (grau), „100 tester slots" aus `app-tech` entfernt, „About the beta"-Link sowie der „Beta"-Nav-Eintrag (→ `beta/sketchline.html`) entfernt. Beta-Seite bleibt bestehen, ist aber nicht mehr verlinkt. |
 | 1.7 | 2026-06-14 | Neue `changelog.html` (Track-Tailor-Release-Notes, reverse-chronologisch, Gruppen New/Improved/Fixed/Known limitations, `<article>`/`<time>`-Semantik) nach Muster der Subseiten gebaut — nutzt `shared.css`, nur seitenspezifische Regeln im `<style>`-Block. Von der Track-Tailor-Card aus als „Changelog"-`.app-link` verlinkt. Enthält 1.1.4 (Build 94, Release-Datum noch offen) und 1.0.0 (Build 86). |
+| 1.8 | 2026-08-07 | Track Tailor 1.1.4 (Build 94) seit 2026-06-15 auf dem App Store live — Release-Datum in `changelog.html` eingetragen. Card nach Sketchline-Muster umgestellt: TestFlight-Pill entfernt, `.badge-beta` entfernt, „About the beta"-Link entfernt, `app-tech`-Zeile (nur Beta-Hinweis, keine echten Tech-Facts) komplett entfernt. Beta-Link auch aus dem `changelog.html`-Footer entfernt. `beta/tracktailor.html` bleibt bestehen, ist aber nirgends mehr verlinkt. |
 
 ---
 
