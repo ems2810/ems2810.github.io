@@ -34,7 +34,8 @@ ems2810.github.io/
 │   ├── sketchline-privacy.html         — Sketchline Privacy Policy
 │   ├── sketchline-terms.html           — Sketchline Terms of Use
 │   ├── foliohome-privacy.html          — Folio Home Privacy Policy
-│   └── foliohome-terms.html            — Folio Home Terms of Use
+│   ├── foliohome-terms.html            — Folio Home Terms of Use
+│   └── impressum.html                  — Anbieterkennzeichnung § 5 DDG (site-wide, nicht app-spezifisch)
 ├── beta/                               — TestFlight landing pages
 │   ├── tracktailor.html                — Track Tailor beta page
 │   ├── sketchline.html                 — Sketchline beta page
@@ -130,6 +131,11 @@ ems2810.github.io/
 | Copyright | `legal/foliohome-copyright.html` | ✅ Exists |
 | Support | `apps/foliohome-support.html` | ✅ Exists |
 
+### Site-wide (nicht app-spezifisch)
+| Document | File | Note |
+|---|---|---|
+| Impressum | `legal/impressum.html` | ✅ Exists — § 5 DDG, § 18 Abs. 2 MStV, USt-IdNr. `DE463836889`; DE ist die verbindliche Fassung, EN-Kurzfassung darunter. Aus dem Footer **jeder** Seite verlinkt. |
+
 **Terms of Use for all apps:** Use the Apple Standard EULA —
 `https://www.apple.com/legal/internet-services/itunes/dev/stdeula/`
 All `*-terms.html` files should redirect to or prominently link this URL. No custom EULA needed.
@@ -214,6 +220,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 | 1.6 | 2026-05-31 | Sketchline live auf dem App Store (id6762081024): TestFlight-Pill in der Card durch „Download on the App Store"-Badge ersetzt, Badge von `.badge-beta` auf `Live` (grau), „100 tester slots" aus `app-tech` entfernt, „About the beta"-Link sowie der „Beta"-Nav-Eintrag (→ `beta/sketchline.html`) entfernt. Beta-Seite bleibt bestehen, ist aber nicht mehr verlinkt. |
 | 1.7 | 2026-06-14 | Neue `changelog.html` (Track-Tailor-Release-Notes, reverse-chronologisch, Gruppen New/Improved/Fixed/Known limitations, `<article>`/`<time>`-Semantik) nach Muster der Subseiten gebaut — nutzt `shared.css`, nur seitenspezifische Regeln im `<style>`-Block. Von der Track-Tailor-Card aus als „Changelog"-`.app-link` verlinkt. Enthält 1.1.4 (Build 94, Release-Datum noch offen) und 1.0.0 (Build 86). |
 | 1.8 | 2026-08-07 | Track Tailor 1.1.4 (Build 94) seit 2026-06-15 auf dem App Store live — Release-Datum in `changelog.html` eingetragen. Card nach Sketchline-Muster umgestellt: TestFlight-Pill entfernt, `.badge-beta` entfernt, „About the beta"-Link entfernt, `app-tech`-Zeile (nur Beta-Hinweis, keine echten Tech-Facts) komplett entfernt. Beta-Link auch aus dem `changelog.html`-Footer entfernt. `beta/tracktailor.html` bleibt bestehen, ist aber nirgends mehr verlinkt. |
+| 1.9 | 2026-08-30 | Neue `legal/impressum.html`: Anbieterkennzeichnung nach § 5 DDG (Name, Anschrift, E-Mail), Umsatzsteuer-Identifikationsnummer `DE463836889` nach § 27 a UStG (erteilt 2026-07-21), Verantwortlicher nach § 18 Abs. 2 MStV, VSBG-Hinweis, Haftungs-/Urheberrechtsabschnitte. Deutsch ist die verbindliche Fassung, englische Kurzfassung darunter — kein Sprach-Switcher. `Impressum` in den Footer **aller** Seiten aufgenommen (index, changelog, apps/, beta/, legal/), damit es von überall in einem Klick erreichbar ist. |
 
 ---
 
