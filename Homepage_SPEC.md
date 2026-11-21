@@ -1,5 +1,5 @@
 # ems2810.github.io — Homepage Specification
-**Version 1.7 — June 14, 2026**
+**Version 2.0 — November 21, 2026**
 
 ---
 
@@ -23,26 +23,34 @@ ems2810.github.io/
 ├── changelog.html                      — Track Tailor release notes (version by version)
 ├── shared.css                          — Global stylesheet
 ├── app-ads.txt                         — AdMob verification
-├── icons/                              — App icon PNGs (not inline SVGs)
+├── icons/                              — App icon PNGs (not inline SVGs), 256×256
 │   ├── tracktailor.png
 │   ├── sketchline.png
-│   └── foliohome.png
+│   ├── emberanvil.png
+│   ├── foliohome.png
+│   └── app-store-badge.svg             — Apple's "Download on the App Store" badge
 ├── legal/                              — Legal documents, flat structure, appname-doctype.html
 │   ├── playlistgenerator-privacy.html  — Track Tailor Privacy Policy
 │   ├── playlistgenerator-copyright.html— Track Tailor Copyright
 │   ├── playlistgenerator-terms.html    — Track Tailor Terms of Use
 │   ├── sketchline-privacy.html         — Sketchline Privacy Policy
 │   ├── sketchline-terms.html           — Sketchline Terms of Use
+│   ├── sketchline-copyright.html       — Sketchline Copyright
+│   ├── emberanvil-privacy.html         — Ember & Anvil Privacy Policy (TestFlight-Pflicht-URL)
+│   ├── emberanvil-terms.html           — Ember & Anvil Terms of Use
 │   ├── foliohome-privacy.html          — Folio Home Privacy Policy
 │   ├── foliohome-terms.html            — Folio Home Terms of Use
+│   ├── foliohome-copyright.html        — Folio Home Copyright
 │   └── impressum.html                  — Anbieterkennzeichnung § 5 DDG (site-wide, nicht app-spezifisch)
 ├── beta/                               — TestFlight landing pages
-│   ├── tracktailor.html                — Track Tailor beta page
-│   ├── sketchline.html                 — Sketchline beta page
-│   └── foliohome.html                  — Folio Home beta page (future)
+│   ├── tracktailor.html                — Track Tailor beta page (1.2.0)
+│   ├── sketchline.html                 — Sketchline beta page (1.3.1)
+│   ├── emberanvil.html                 — Ember & Anvil beta page (TestFlight-Link noch deaktiviert)
+│   └── foliohome.html                  — Folio Home beta page (unverlinkt, future)
 └── apps/                               — App support pages
     ├── playlistgenerator-support.html  — Track Tailor Support
     ├── sketchline-support.html         — Sketchline Support
+    ├── emberanvil-support.html         — Ember & Anvil Support
     └── foliohome-support.html          — Folio Home Support
 ```
 
@@ -51,7 +59,7 @@ ems2810.github.io/
 **Internal files (hidden from GitHub Pages rendering):**
 - `_ANLEITUNG.md`, `_README.md`, `_config.yml` — prefixed with underscore per convention
 
-**File status:** Alle Legal- und Support-Dateien für die drei Apps existieren (Stand 2026-05-09).
+**File status:** Alle Legal- und Support-Dateien für die vier Apps existieren (Stand 2026-11-21). Ember & Anvil hat Privacy + Terms + Support, aber noch keine Copyright-Seite — wird erst zum App-Store-Release gebraucht.
 
 ---
 
@@ -63,12 +71,12 @@ ems2810.github.io/
 | **Status** | ✅ Live on App Store |
 | **Internal name** | `playlistgenerator` (used in all filenames) |
 | **App Store** | https://apps.apple.com/us/app/track-tailor/id6761209212 |
-| **TestFlight** | https://testflight.apple.com/join/EYUFyc9k (100 slots) — no longer linked from homepage |
+| **TestFlight** | https://testflight.apple.com/join/EYUFyc9k (100 slots) — wieder von der Startseite verlinkt (ab v2.0) |
 | **Description** | Dynamic Apple Music playlist generator |
 | **Legal hosting** | Privacy Policy + Copyright → `legal/playlistgenerator-privacy.html` / `playlistgenerator-copyright.html`; Terms → `playlistgenerator-terms.html`; Support → `apps/playlistgenerator-support.html` |
-| **Beta page** | `beta/tracktailor.html` — exists but unlinked (reachable only by direct URL) |
+| **Beta page** | `beta/tracktailor.html` — Stand 1.2.0 (Siri/Shortcuts, Playlist-Beschreibung in einem Satz, Umbenennen/Löschen, iPad- und iPhone-Duo-Layout) |
 | **Changelog** | `changelog.html` — reverse-chronological release notes (New / Improved / Fixed / Known limitations per version) |
-| **CTA on homepage** | "Download on the App Store" badge + "Changelog" link + "Support" link; `Live` badge; no TestFlight/"About the beta" link |
+| **CTA on homepage** | "Download on the App Store" badge + "Changelog" + "Support" + "Join the beta (1.2.0)" → `beta/tracktailor.html`; `Live` badge |
 
 **App icon:** `icons/tracktailor.png`
 
@@ -77,25 +85,46 @@ ems2810.github.io/
 |---|---|
 | **Status** | ✅ Live on App Store |
 | **App Store** | https://apps.apple.com/us/app/sketchline/id6762081024 |
-| **TestFlight** | https://testflight.apple.com/join/WyqxGCUU (100 slots) — no longer linked from homepage |
-| **Platform** | iPad only (iPadOS 17.0+) |
-| **Description** | Natural drawing app for iPad with full Apple Pencil support |
-| **Legal hosting** | `legal/sketchline-privacy.html`, `sketchline-terms.html`; copyright + support pages missing (to be created) |
-| **Beta page** | `beta/sketchline.html` — exists but unlinked (reachable only by direct URL) |
-| **CTA on homepage** | "Download on the App Store" badge + Support link; `Live` badge; no TestFlight/"About the beta" link |
+| **TestFlight** | https://testflight.apple.com/join/WyqxGCUU (100 slots) — wieder von der Startseite verlinkt (ab v2.0) |
+| **Platform** | iPhone, iPad und iPhone Duo — iOS/iPadOS 26.0+ (`IPHONEOS_DEPLOYMENT_TARGET = 26.0`, `TARGETED_DEVICE_FAMILY = "1,2"`) |
+| **Description** | Natural drawing app for iPhone and iPad; Apple Pencil optional, auf dem iPad voll unterstützt |
+| **Legal hosting** | `legal/sketchline-privacy.html`, `sketchline-terms.html`, `sketchline-copyright.html`; Support `apps/sketchline-support.html` |
+| **Beta page** | `beta/sketchline.html` — Stand 1.3.1 (Siri, iPhone- und iPhone-Duo-Split-View, Fix für das Einfrieren beim Öffnen) |
+| **CTA on homepage** | "Download on the App Store" badge + "Support" + "Join the beta (1.3.1)" → `beta/sketchline.html`; `Live` badge |
+| **`app-tech`** | `iOS / iPadOS 26 · Apple Pencil optional · Siri` |
 
 **App icon:** `icons/sketchline.png`
 
-### 3.3 Folio Home
+### 3.3 Ember & Anvil
 | | |
 |---|---|
-| **Status** | 🚧 In Development (Coming Soon) |
+| **Status** | 🔨 Beta soon — externe TestFlight-Beta in Vorbereitung, noch kein Build live |
+| **Internal name** | `emberanvil` (used in all filenames) |
+| **Bundle ID** | `de.achim.EmberAnvil` |
+| **App Store** | Not yet available |
+| **Platform** | iOS/iPadOS 27.0+ (iPhone, iPad, iPhone Duo) — `IPHONEOS_DEPLOYMENT_TARGET = 27.0`, `TARGETED_DEVICE_FAMILY = "1,2"` |
+| **Description** | Idle blacksmith RPG. Run a forge at the edge of the dungeon: gather and refine materials, craft and enchant gear, and equip hero parties for their expeditions. No pay-to-win. |
+| **Legal hosting** | `legal/emberanvil-privacy.html`, `emberanvil-terms.html`; Support `apps/emberanvil-support.html` |
+| **Beta page** | `beta/emberanvil.html` — TestFlight-Button als `.tf-button-disabled` („TestFlight link coming soon") + `mailto:`-Invite; Abschnitt „What we want feedback on" (Fortschrittsgefühl, Wofür sind Items gut, Balancing, Bedienung) |
+| **CTA on homepage** | `.btn-primary` „Get notified / Join the beta" → `beta/emberanvil.html` + „Support" link; `.badge-beta` „Beta soon" |
+| **`app-tech`** | `iOS / iPadOS 27 · iPhone Duo · Plays offline` |
+
+**App icon:** `icons/emberanvil.png` — kopiert aus `~/Files_Achim/XCode/EmberAnvil/EmberAnvil/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-default.png`, mit `sips -Z 256` auf 256×256 verkleinert.
+
+**Privacy-Stand (im Code verifiziert, 2026-11-21):** Keine Werbung, kein Analytics, kein Tracking, kein IDFA, keine Third-Party-SDKs, **keine Netzwerkzugriffe überhaupt**. Kein iCloud-Sync und kein Aktivitäts-Log/Export im Code — der Spielstand ist eine einzelne Datei unter `Application Support` plus eine Backup-Kopie. App-Store-Connect-Deklaration: *Data Not Collected*. Die Privacy Policy beschreibt genau diesen Stand; sie ist **nicht** vorausschauend auf iCloud-Sync formuliert.
+
+### 3.4 Folio Home
+| | |
+|---|---|
+| **Status** | 🚧 In Development — **hidden from homepage** (ab v2.0) |
 | **App Store** | Not yet available |
 | **Platform** | iOS 26.0+ (iPhone & iPad) |
 | **Description** | Household budget & finance app |
-| **Legal hosting** | `legal/foliohome-privacy.html`, `foliohome-terms.html`; copyright + support pages missing (to be created) |
+| **Legal hosting** | `legal/foliohome-privacy.html`, `foliohome-terms.html`, `foliohome-copyright.html`; Support `apps/foliohome-support.html` |
 | **Beta page** | `beta/foliohome.html` (exists, future use) |
-| **CTA on homepage** | "Coming Soon" — no link |
+| **CTA on homepage** | **Keine Card mehr.** Die Karte wurde aus `index.html` entfernt. |
+
+> **Wichtig:** Alle Folio-Home-Dateien unter `legal/`, `apps/` und `beta/` **bleiben bestehen** und bleiben per direkter URL erreichbar — sie sind rechtlich gebunden und aus App Store Connect verlinkt. Entfernt wurde ausschließlich die Verlinkung von der Startseite. Nicht aufräumen.
 
 **App icon:** `icons/foliohome.png`
 - Background: linear gradient `#534AB7` → `#7A72D6`, top-left to bottom-right
@@ -130,6 +159,14 @@ ems2810.github.io/
 | Terms of Use | `legal/foliohome-terms.html` | ✅ Exists → redirect to Apple EULA |
 | Copyright | `legal/foliohome-copyright.html` | ✅ Exists |
 | Support | `apps/foliohome-support.html` | ✅ Exists |
+
+### Ember & Anvil
+| Document | File | Note |
+|---|---|---|
+| Privacy Policy | `legal/emberanvil-privacy.html` | ✅ Exists — Pflicht-URL für die externe TestFlight-Beta |
+| Terms of Use | `legal/emberanvil-terms.html` | ✅ Exists → Apple EULA + Beta-/Savegame-/No-pay-to-win-Abschnitte |
+| Copyright | — | Noch nicht angelegt; erst zum App-Store-Release nötig |
+| Support | `apps/emberanvil-support.html` | ✅ Exists |
 
 ### Site-wide (nicht app-spezifisch)
 | Document | File | Note |
@@ -191,6 +228,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 - **Badge:** Pill, `0.6875rem`, uppercase, `padding: 2px 8px`. Default = grau (`rgba(0,0,0,0.05)` + `--ink-muted`). Nur `.badge-beta` trägt den Akzent (Purple-Tint).
 - **Primär-CTA:** Solider Button — `--accent` Hintergrund, weißer Text, `8px` Radius, `0.5rem 1.1rem` Padding. Eine visuelle Form pro Aktion.
 - **Sekundär-Link:** Inline, Underline (`border-bottom`), `--ink-muted`.
+- **TestFlight-CTA (`beta/`):** `.tf-button` — solider Akzent-Button, `0.75rem 2rem`, `8px` Radius. `.tf-button-disabled` ist die Variante für eine noch nicht offene Beta (grauer Grund, `--ink-faint`, `aria-disabled="true"`, **kein** `<a>`). `.tf-note` darunter für den Kleingedruckten-Hinweis. Beide ab v2.0 in `shared.css` statt pro Seite.
 - **Coming-Soon-Card:** Icon `opacity: 0.55` + `grayscale(0.4)`, App-Name in `--ink-muted`. Kein Link-Bereich → `mailto:`-Notify.
 - **Nav:** Sticky, weißer Backdrop-Blur, keine Brand-Mark im Header (nur Footer trägt Namen/Copyright).
 - **Language-Switch:** Vier Pill-Buttons (`EN · DE · ES · FR`) rechts in der Nav. Aktiver Status: schwarzer Border + `--ink` Text. Werte werden in `localStorage` unter `lang` gespeichert; Initialwert via `navigator.language` (Fallback `en`).
@@ -203,6 +241,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 |---|---|---|---|
 | Live on App Store | Default grau (`Live`) | normal | Primär-Button „App Store →" |
 | TestFlight Beta | `.badge-beta` (purple-tint) | normal | Primär-Button „Join Beta →" |
+| Beta soon (noch kein Build) | `.badge-beta` (purple-tint, `Beta soon`) | normal | Primär-Button „Get notified / Join the beta →" auf die Beta-Seite; dort `.tf-button-disabled` + `mailto:`-Invite |
 | In Development | Default grau (`Coming Soon`) | desaturiert + opacity 0.55 | Kein primärer Link; `mailto:` „Email me when it ships" |
 
 ---
@@ -221,6 +260,7 @@ Zwischenwerte (`0.8125`, `0.9375`, `1.0625`, `1.1`, `1.3`) vermeiden — Drift o
 | 1.7 | 2026-06-14 | Neue `changelog.html` (Track-Tailor-Release-Notes, reverse-chronologisch, Gruppen New/Improved/Fixed/Known limitations, `<article>`/`<time>`-Semantik) nach Muster der Subseiten gebaut — nutzt `shared.css`, nur seitenspezifische Regeln im `<style>`-Block. Von der Track-Tailor-Card aus als „Changelog"-`.app-link` verlinkt. Enthält 1.1.4 (Build 94, Release-Datum noch offen) und 1.0.0 (Build 86). |
 | 1.8 | 2026-08-07 | Track Tailor 1.1.4 (Build 94) seit 2026-06-15 auf dem App Store live — Release-Datum in `changelog.html` eingetragen. Card nach Sketchline-Muster umgestellt: TestFlight-Pill entfernt, `.badge-beta` entfernt, „About the beta"-Link entfernt, `app-tech`-Zeile (nur Beta-Hinweis, keine echten Tech-Facts) komplett entfernt. Beta-Link auch aus dem `changelog.html`-Footer entfernt. `beta/tracktailor.html` bleibt bestehen, ist aber nirgends mehr verlinkt. |
 | 1.9 | 2026-08-30 | Neue `legal/impressum.html`: Anbieterkennzeichnung nach § 5 DDG (Name, Anschrift, E-Mail), Umsatzsteuer-Identifikationsnummer `DE463836889` nach § 27 a UStG (erteilt 2026-07-21), Verantwortlicher nach § 18 Abs. 2 MStV, VSBG-Hinweis, Haftungs-/Urheberrechtsabschnitte. Deutsch ist die verbindliche Fassung, englische Kurzfassung darunter — kein Sprach-Switcher. `Impressum` in den Footer **aller** Seiten aufgenommen (index, changelog, apps/, beta/, legal/), damit es von überall in einem Klick erreichbar ist. |
+| 2.0 | 2026-11-21 | **Beta-Links zurück auf die Startseite, Ember & Anvil neu, Folio Home ausgeblendet.** Track-Tailor-Card bekommt „Join the beta (1.2.0)" → `beta/tracktailor.html`, Sketchline-Card „Join the beta (1.3.1)" → `beta/sketchline.html`. Sketchline ist nicht mehr iPad-only: Texte auf iPhone + iPad + iPhone Duo umgestellt, `app-tech` auf „iOS / iPadOS 26 · Apple Pencil optional · Siri" (verifiziert gegen `IPHONEOS_DEPLOYMENT_TARGET = 26.0` im Xcode-Projekt). Beide Beta-Seiten auf den aktuellen Stand gebracht (1.2.0 / 1.3.1, neue „What's new"-Abschnitte). Neue App **Ember & Anvil**: Card mit `.badge-beta` „Beta soon", `icons/emberanvil.png` (256×256), neue `beta/emberanvil.html` mit deaktiviertem TestFlight-Button und „What we want feedback on", neue `legal/emberanvil-privacy.html` (Pflicht-URL für die externe Beta, Stand im Code verifiziert: Data Not Collected, keine Netzwerkzugriffe, **kein** iCloud-Sync), `legal/emberanvil-terms.html`, `apps/emberanvil-support.html`. **Folio Home** von der Startseite entfernt — alle Dateien bleiben bestehen (§3.4). Nebenbei aufgeräumt: `.tf-button`/`.tf-note` waren nur in `beta/foliohome.html` definiert, d. h. die TestFlight-Buttons auf `beta/tracktailor.html` und `beta/sketchline.html` rendern seit v1.5 als nackte Links → beide Klassen plus `.tf-button-disabled` nach `shared.css` verschoben; letzte toten Tokens `var(--purple)`/`var(--green)`/`'DM Sans'` aus `beta/sketchline.html`, `beta/foliohome.html`, `legal/foliohome-terms.html`, `apps/foliohome-support.html` und `apps/sketchline-support.html` entfernt. Versionsnummer auf 2.0, weil der Header auf 1.7 stehengeblieben war, während die Tabelle schon 1.8 und 1.9 enthielt. |
 
 ---
 
@@ -282,4 +322,4 @@ Mehrsprachige Seiten (Stand v1.5):
 ---
 
 *Homepage Spec — ems2810.github.io*
-*Last updated: June 14, 2026*
+*Last updated: November 21, 2026*

@@ -60,7 +60,7 @@
   </div>
 
   <p style="font-size:1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.5rem;">
-    Track Tailor is live on the App Store. A new version is currently in testing on TestFlight with up to 100 tester slots — try the latest improvements before they ship to the public release.
+    Track Tailor is live on the App Store. Version 1.2.0 is currently in testing on TestFlight — try the latest improvements before they ship to the public release.
   </p>
 
   <div class="waitlist-form">
@@ -71,37 +71,29 @@
   </div>
 
   <h2>What's new in this beta</h2>
-  <p style="color: var(--ink-faint); font-size: 0.875rem; margin-top: -0.25rem; margin-bottom: 1rem;">Version 1.1.1 · Build 88</p>
+  <p style="color: var(--ink-faint); font-size: 0.875rem; margin-top: -0.25rem; margin-bottom: 1rem;">Version 1.2.0</p>
 
-  <h3 style="font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Better genre searches</h3>
+  <h3 style="font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Siri and Shortcuts</h3>
   <ul class="feature-list">
-    <li><span class="feat-dot"></span><span><strong>Fusion genres find the right artists again.</strong> Genres with two parents (e.g. <em>Country Rock</em>, <em>Folk Rock</em>) were collapsing to almost zero artists. They now resolve correctly — Country Rock went from 1 artist back to ~40 artists / 5,000+ tracks.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Curated genre list always counts.</strong> The bundled list of artists per genre is now merged with the online sources instead of only being used when the online sources return nothing. Hundreds of curated artists (Hardcore family, Country Rock, …) that were previously invisible are now included in every sync.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Fewer false positives in niche genres.</strong> Layered filtering against Apple Music's own genre families keeps unrelated artists (e.g. mainstream pop in a Hardcore Techno search) out of the results.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Sync a playlist by voice.</strong> Ask Siri to refresh a playlist by name, and the app runs the sync without you opening it.</span></li>
+    <li><span class="feat-dot"></span><span><strong>App Intents for Shortcuts and automations.</strong> The same actions are available in the Shortcuts app, so a sync can run on a schedule or as part of a larger automation.</span></li>
   </ul>
 
-  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Sync is more reliable</h3>
+  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Describe a playlist in one sentence</h3>
   <ul class="feature-list">
-    <li><span class="feat-dot"></span><span><strong>Long syncs resume where they left off.</strong> If iOS closes the app mid-sync or you force-quit, the next launch continues from the artist you stopped at instead of starting over.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Resume survives multiple interruptions.</strong> A sync that's been suspended by iOS more than once no longer gets discarded.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Honest sync duration.</strong> The reported duration now sums all resumed segments — not just the last one — and excludes the time the app was closed.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Cancel stops immediately.</strong> Tapping Cancel halts the visible progress right away instead of letting in-flight searches keep updating the row for several seconds.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Type what you want and get the filter rules.</strong> Instead of filling in every field by hand, describe the playlist in plain language — "melodic techno from the last two years" — and the app turns it into artists, genres, keywords and a date range that you can still edit before syncing.</span></li>
   </ul>
 
-  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Smaller fixes</h3>
+  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Managing your playlists</h3>
   <ul class="feature-list">
-    <li><span class="feat-dot"></span><span><strong>Album release date is used for "Last N days" filters</strong> instead of the original master-recording date, so newly released remixes and re-releases now appear in Release-Radar-style playlists.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Tracks from the same album stay grouped together</strong> in the resulting playlist.</span></li>
-    <li><span class="feat-dot"></span><span><strong>The Sync Complete alert no longer dismisses an open sheet</strong> (Wizard, Settings, Subscription). Your in-progress edit stays where it is.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Share button opens the system share sheet directly</strong> — no more intermediate sheet with a single "Share…" link.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Live Activity for an actively running sync is preserved</strong> when you tap it open, instead of disappearing while the sync continues silently.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Playlist overview shows track counts instantly</strong> from cache instead of waiting 20–60 s on cold start for large libraries.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Rename a playlist</strong> from the playlist overview — the name change carries over to Apple Music on the next sync.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Delete a playlist</strong> and choose whether the Apple Music playlist goes with it or stays behind untouched.</span></li>
   </ul>
 
-  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Localization</h3>
+  <h3 style="font-size: 1rem; margin-top: 1.75rem; margin-bottom: 0.5rem;">Layout on bigger and folding screens</h3>
   <ul class="feature-list">
-    <li><span class="feat-dot"></span><span><strong>Full German, Spanish, and French translations</strong> for date ranges ("Last 7 Days"), progress strings ("Searching 12 of 40 artists…"), filter summary chips, genre source captions, mail templates, and the track count — previously many of these stayed English even when the rest of the UI was translated.</span></li>
-    <li><span class="feat-dot"></span><span><strong>Correct singular/plural</strong> ("1 track" vs "12 tracks") across all four languages.</span></li>
+    <li><span class="feat-dot"></span><span><strong>A real iPad layout.</strong> The playlist list and the detail view sit side by side instead of the iPhone layout stretched to fill the screen.</span></li>
+    <li><span class="feat-dot"></span><span><strong>iPhone Duo support.</strong> The layout follows the hinge on the foldable iPhone Duo, switching between the single-column outer display and the two-column inner one as it opens and closes.</span></li>
   </ul>
 
   <h2>What's in Track Tailor</h2>
@@ -112,10 +104,11 @@
     <li><span class="feat-dot"></span><span>Background sync keeps playlists fresh even when the app isn't open</span></li>
     <li><span class="feat-dot"></span><span>iCloud sync so playlist configurations follow you across iPhone and iPad</span></li>
     <li><span class="feat-dot"></span><span>Optional Remove Ads subscription</span></li>
+    <li><span class="feat-dot"></span><span>Siri and Shortcuts actions, plus plain-language playlist descriptions</span></li>
   </ul>
 
   <h2>Requirements</h2>
-  <p>Track Tailor requires iOS 17 or later and an active Apple Music subscription.</p>
+  <p>Track Tailor requires iOS 17 or later and an active Apple Music subscription. The iPad and iPhone Duo layouts need iOS or iPadOS 26.</p>
 
   <h2>Feedback</h2>
   <p>The fastest way to send feedback is the TestFlight feedback button (long-press the app icon or use the TestFlight app). You can also email <a href="mailto:gourd_pulp.9b@icloud.com">gourd_pulp.9b@icloud.com</a> — include your iOS version, the app build number (Settings → About), and steps to reproduce.</p>

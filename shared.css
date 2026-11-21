@@ -176,7 +176,7 @@ footer {
   font-size: 0.875rem;
   color: var(--ink-faint);
 }
-.footer-links { display: flex; gap: 1.25rem; list-style: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; list-style: none; }
 .footer-links a {
   font-size: 0.875rem;
   color: var(--ink-faint);
@@ -188,4 +188,37 @@ footer {
   nav { padding: 0 1rem; }
   .page { padding-left: 1.25rem; padding-right: 1.25rem; padding-top: 2.5rem; }
   footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+/* TestFlight CTA — used by every page under beta/ */
+.tf-button {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white !important;
+  background: var(--accent);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.tf-button:hover { background: var(--accent-dark); }
+
+.tf-button-disabled {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-faint);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid var(--rule);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+
+.tf-note {
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+  margin-top: 1rem;
+  margin-bottom: 0;
 }

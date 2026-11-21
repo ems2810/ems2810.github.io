@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Ember &amp; Anvil</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .faq-item {
+    border-top: 1px solid var(--rule);
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-of-type { border-bottom: 1px solid var(--rule); }
+  .faq-q {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .faq-a {
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .contact-box {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .contact-box h2 { margin-top: 0; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+  <p class="page-eyebrow">Ember &amp; Anvil</p>
+  <h1>Support</h1>
+  <p class="page-meta">Idle blacksmith RPG for iPhone &amp; iPad · TestFlight beta</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <p class="faq-q">Which devices are supported?</p>
+    <p class="faq-a">Ember &amp; Anvil runs on iPhone and iPad with iOS or iPadOS 27 or later, and it has a dedicated layout for the foldable iPhone Duo on both the outer and the inner display. There is no Mac or Apple Watch version.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Does the game keep running when I close it?</p>
+    <p class="faq-a">Yes. It is an idle game: your active skill keeps completing cycles while the app is in the background or closed, and the progress is calculated when you come back. Time away counts for up to 12 hours per absence — anything beyond that is not credited, so there is no benefit to leaving the app shut for days.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Where is my save game stored? Does it sync between devices?</p>
+    <p class="faq-a">The save game is a single file inside the app's own container on your device, with one backup copy of the previous save. It is not synchronised between devices — the game currently lives on one device at a time. It is included in encrypted device backups and iCloud device backups, so restoring a device restores your progress.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Will my progress survive a beta update?</p>
+    <p class="faq-a">Usually, yes — save files carry a schema version and are migrated forward where the structure changed. During the beta a save can still become unreadable by a newer build. If that happens the app refuses to overwrite the file rather than losing it silently, and you can start over with the reset in the gear menu.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I start over?</p>
+    <p class="faq-a">Open the gear menu in the game and use the reset. It discards the current save game and begins a new one. This cannot be undone.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Are there ads, in-app purchases or a subscription?</p>
+    <p class="faq-a">No. The current version has no advertising, no in-app purchases, no subscription and no currency that can be bought with real money. Progress comes from playing. The app also makes no network requests at all — see the <a href="../legal/emberanvil-privacy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Balancing feels off — is that a bug?</p>
+    <p class="faq-a">Probably not a bug, but worth reporting. Numbers are still being tuned during the beta, and how long a stretch of the game feels is exactly the feedback that is most useful. Tell me where it dragged or where it went too fast, and roughly what your total level and shaft depth were at the time.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I report a bug in the beta?</p>
+    <p class="faq-a">Use the TestFlight feedback button — take a screenshot in the app and tap Share, or long-press the app icon and choose Send Beta Feedback — or email the address below. Please include your iOS version, the build number, and what you did just before it went wrong.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I leave the beta?</p>
+    <p class="faq-a">Open TestFlight, tap Ember &amp; Anvil, and choose "Stop Testing." You can rejoin later as long as slots are available. Your save game is removed with the app.</p>
+  </div>
+
+  <h2>Known limits of the current beta</h2>
+  <ul>
+    <li>Balancing is still being tuned, and some stretches of progression are longer than intended.</li>
+    <li>No synchronisation between devices yet — one device at a time.</li>
+    <li>Offline progress is credited for at most 12 hours per absence.</li>
+    <li>A save game may not survive every beta update; the reset in the gear menu starts over.</li>
+  </ul>
+
+  <div class="contact-box">
+    <h2>Still need help?</h2>
+    <p>Send an email with your iOS version, the build number, your total level and shaft depth, and a description of the issue.</p>
+    <p style="margin-top: 1rem;"><a href="mailto:gourd_pulp.9b@icloud.com?subject=Ember%20%26%20Anvil%20%E2%80%94%20Support" style="font-weight:500;">gourd_pulp.9b@icloud.com →</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-name">© Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/emberanvil-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/emberanvil-terms.html">Terms of Use</a></li>
+    <li><a href="../legal/impressum.html">Impressum</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+</body>
+</html>

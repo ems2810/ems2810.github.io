@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beta Waitlist — Sketchline</title>
+<title>Beta — Sketchline</title>
 <link rel="stylesheet" href="../shared.css">
 <style>
   .beta-hero {
@@ -12,9 +12,10 @@
   }
   .beta-icon {
     width: 56px; height: 56px; border-radius: 14px;
-    background: linear-gradient(135deg, #f0e6d3 0%, #e8d5b7 100%);
+    overflow: hidden;
     flex-shrink: 0;
   }
+  .beta-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .waitlist-form {
     background: var(--paper-warm);
     border: 1px solid var(--rule);
@@ -30,8 +31,7 @@
     min-width: 200px;
     height: 42px;
     padding: 0 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     background: white;
     border: 1px solid var(--rule);
     border-radius: 8px;
@@ -43,8 +43,7 @@
   .form-btn {
     height: 42px;
     padding: 0 1.5rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 500;
     color: white;
     background: var(--ink);
@@ -63,7 +62,7 @@
   }
   .success-msg {
     display: none;
-    color: var(--green);
+    color: var(--ink-muted);
     font-size: 0.9375rem;
     font-weight: 500;
     margin-top: 1rem;
@@ -79,7 +78,7 @@
   .feature-list li:last-child { border-bottom: none; }
   .feat-dot {
     width: 6px; height: 6px; border-radius: 50%;
-    background: var(--purple);
+    background: var(--accent);
     flex-shrink: 0;
     margin-top: 7px;
   }
@@ -93,44 +92,57 @@
 <main class="page">
 
   <div class="beta-hero">
-    <div class="beta-icon"></div>
+    <div class="beta-icon">
+      <img src="../icons/sketchline.png" alt="Sketchline app icon" width="56" height="56">
+    </div>
     <div>
       <p class="page-eyebrow" style="margin-bottom:0.25rem;">Sketchline</p>
-      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Beta Waitlist</h1>
+      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Beta</h1>
     </div>
   </div>
 
   <p style="font-size:1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.5rem;">
-    Sketchline is a natural drawing app for iPad with full Apple Pencil support. The beta is live on TestFlight with 100 available slots.
+    Sketchline is a natural drawing app for iPhone and iPad. It is live on the App Store — version 1.3.1 is currently in testing on TestFlight, so you can try the latest changes before they ship.
   </p>
 
   <div class="waitlist-form">
     <h2>Join the beta on TestFlight</h2>
-    <p>The beta is open to the first 100 testers. Tap the button below to join via TestFlight — you'll need the free TestFlight app installed on your iPad.</p>
+    <p>Tap the button below to join via TestFlight. You'll need the free TestFlight app installed on your iPhone or iPad.</p>
     <a href="https://testflight.apple.com/join/WyqxGCUU" class="tf-button">Open in TestFlight →</a>
     <p class="tf-note">TestFlight is Apple's free beta testing platform. The beta may contain bugs — please report them via the TestFlight feedback button or by email.</p>
   </div>
 
+  <h2>What's new in this beta</h2>
+  <p style="color: var(--ink-faint); font-size: 0.875rem; margin-top: -0.25rem; margin-bottom: 1rem;">Version 1.3.1</p>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span><strong>Siri and App Intents.</strong> Start a new drawing or open your most recent one by voice, and add the same actions to Shortcuts.</span></li>
+    <li><span class="feat-dot"></span><span><strong>iPhone support.</strong> The full drawing surface, gallery and toolbar now adapt to iPhone, not just iPad.</span></li>
+    <li><span class="feat-dot"></span><span><strong>iPhone Duo split view.</strong> On the foldable iPhone Duo the gallery and canvas sit side by side on the inner display, and the layout follows the hinge as it opens and closes.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Fixed: the app no longer freezes on launch.</strong> Opening the app could hang on the first frame while restoring the last drawing. Startup is now reliable.</span></li>
+  </ul>
+
   <h2>What's in Sketchline</h2>
   <ul class="feature-list">
     <li><span class="feat-dot"></span><span>9 natural brush types: pencil, fountain pen, watercolor, crayon, marker, monoline, and more</span></li>
-    <li><span class="feat-dot"></span><span>Full Apple Pencil support including hover preview, barrel roll, double-tap tool switching, and Squeeze (Apple Pencil Pro)</span></li>
+    <li><span class="feat-dot"></span><span>Full Apple Pencil support on iPad including hover preview, barrel roll, double-tap tool switching, and Squeeze (Apple Pencil Pro)</span></li>
     <li><span class="feat-dot"></span><span>Import photos as reference layers with background removal via Vision</span></li>
     <li><span class="feat-dot"></span><span>Export as PNG, PDF, or native .sketchline package (can be opened from Files.app)</span></li>
     <li><span class="feat-dot"></span><span>Minimal, distraction-free UI — the canvas is the interface</span></li>
     <li><span class="feat-dot"></span><span>Multi-drawing gallery with auto-save and full undo/redo</span></li>
+    <li><span class="feat-dot"></span><span>Siri and Shortcuts actions for starting and reopening drawings</span></li>
   </ul>
 
   <h2>Requirements</h2>
-  <p>Sketchline requires an iPad running iPadOS 17 or later. An Apple Pencil is strongly recommended.</p>
+  <p>Sketchline requires iOS or iPadOS 26 or later and runs on iPhone and iPad. An Apple Pencil is optional — it is fully supported on iPad, including hover preview and Apple Pencil Pro, but not required.</p>
 
 </main>
 
 <footer>
-  <span class="footer-name">Achim Braml</span>
+  <span class="footer-name">© Achim Braml</span>
   <ul class="footer-links">
     <li><a href="../legal/sketchline-privacy.html">Privacy Policy</a></li>
     <li><a href="../legal/sketchline-terms.html">Terms of Use</a></li>
+    <li><a href="../apps/sketchline-support.html">Support</a></li>
     <li><a href="../legal/impressum.html">Impressum</a></li>
     <li><a href="../index.html">Home</a></li>
   </ul>

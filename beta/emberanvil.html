@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta — Ember &amp; Anvil</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  .beta-hero {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .beta-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .beta-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .waitlist-form {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .waitlist-form h2 { margin-top: 0; margin-bottom: 0.6rem; }
+  .waitlist-form p { margin-bottom: 1.5rem; }
+  .feature-list { list-style: none; margin-left: 0; padding-left: 0; }
+  .feature-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feat-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-back">← Back</a>
+</nav>
+
+<main class="page">
+
+  <div class="beta-hero">
+    <div class="beta-icon">
+      <img src="../icons/emberanvil.png" alt="Ember &amp; Anvil app icon" width="56" height="56">
+    </div>
+    <div>
+      <p class="page-eyebrow" style="margin-bottom:0.25rem;">Ember &amp; Anvil</p>
+      <h1 style="font-size: 1.75rem; margin-bottom: 0;">Beta</h1>
+    </div>
+  </div>
+
+  <p style="font-size:1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.5rem;">
+    Ember &amp; Anvil is an idle blacksmith RPG for iPhone and iPad. You run a forge at the edge of the dungeon: gather and refine materials, craft and enchant gear, and equip hero parties for their expeditions. No pay-to-win — no ads, no in-app purchases, nothing to buy.
+  </p>
+
+  <div class="waitlist-form">
+    <h2>Join the beta on TestFlight</h2>
+    <p>The TestFlight build is being prepared. Email me and I'll send you the invite link as soon as the first build is through Apple's beta review — no form, no newsletter, just the link.</p>
+    <span class="tf-button-disabled" aria-disabled="true">TestFlight link coming soon</span>
+    <p class="tf-note">Want the link when it's ready? <a href="mailto:gourd_pulp.9b@icloud.com?subject=Ember%20%26%20Anvil%20%E2%80%94%20Beta%20invite">Email me for a beta invite</a>. You'll need the free TestFlight app on your iPhone or iPad. The beta will contain bugs, and balancing is still being tuned.</p>
+  </div>
+
+  <h2>What we want feedback on</h2>
+  <p>Bug reports are welcome, but these four questions are what the beta is actually for:</p>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span><strong>Does progress feel like progress?</strong> Idle games live or die on this. Where did it feel like you were getting somewhere, and where did it start to feel like waiting for a number to go up?</span></li>
+    <li><span class="feat-dot"></span><span><strong>Is it clear what items are for?</strong> When you pick up an ore, a log or a rare find, do you know what it is good for and what to do with it next — or does it just pile up in the inventory?</span></li>
+    <li><span class="feat-dot"></span><span><strong>Balancing.</strong> Which stretches dragged and which went too fast? Rough numbers help: your total level and shaft depth at the point where it tipped.</span></li>
+    <li><span class="feat-dot"></span><span><strong>Handling.</strong> Did you find the thing you were looking for? Anything that took too many taps, any screen where you weren't sure what to do, anything that felt wrong on your device size — iPhone, iPad or iPhone Duo.</span></li>
+  </ul>
+
+  <h2>What's in the beta</h2>
+  <ul class="feature-list">
+    <li><span class="feat-dot"></span><span>Four gathering skills — mining, woodcutting, foraging and trapping — each with its own actions and rare finds</span></li>
+    <li><span class="feat-dot"></span><span>A shaft that goes deeper with every mining cycle, through depth tiers that unlock new ores</span></li>
+    <li><span class="feat-dot"></span><span>Chambers uncovered as you dig, and delvers you equip and send into them</span></li>
+    <li><span class="feat-dot"></span><span>A village of workplaces that refine and craft while you are away</span></li>
+    <li><span class="feat-dot"></span><span>Offline progress: the game catches up when you return, for up to 12 hours per absence</span></li>
+    <li><span class="feat-dot"></span><span>Layouts for iPhone, iPad and the foldable iPhone Duo, following the hinge as it opens</span></li>
+    <li><span class="feat-dot"></span><span>Plays entirely offline — no account, no network requests, no ads, no purchases</span></li>
+  </ul>
+
+  <h2>Requirements</h2>
+  <p>Ember &amp; Anvil requires iOS or iPadOS 27 or later and runs on iPhone and iPad. Your save game stays on the device — it is not synchronised between devices yet, and the gear menu has a reset so you can start over at any time.</p>
+
+  <h2>Feedback</h2>
+  <p>Once you're in the beta, the fastest route is the TestFlight feedback button — take a screenshot in the app and tap Share, or long-press the app icon and choose Send Beta Feedback. You can also email <a href="mailto:gourd_pulp.9b@icloud.com?subject=Ember%20%26%20Anvil%20%E2%80%94%20Beta%20feedback">gourd_pulp.9b@icloud.com</a> — include your iOS version, the build number, and your total level and shaft depth so I can place where you were.</p>
+
+</main>
+
+<footer>
+  <span class="footer-name">© Achim Braml</span>
+  <ul class="footer-links">
+    <li><a href="../legal/emberanvil-privacy.html">Privacy Policy</a></li>
+    <li><a href="../legal/emberanvil-terms.html">Terms of Use</a></li>
+    <li><a href="../apps/emberanvil-support.html">Support</a></li>
+    <li><a href="../legal/impressum.html">Impressum</a></li>
+    <li><a href="../index.html">Home</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
